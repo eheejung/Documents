@@ -1,10 +1,6 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-[TOC]
-
-
-
 - [Altibase 7.1.0.4.7 Patch Notes](#altibase-71047-patch-notes)
   - [Fixed Bugs](#fixed-bugs)
     - [BUG-48201  assert()가 AIX 7.2에서 동작하지 않습니다.](#bug-48201-assert%EA%B0%80-aix-72%EC%97%90%EC%84%9C-%EB%8F%99%EC%9E%91%ED%95%98%EC%A7%80-%EC%95%8A%EC%8A%B5%EB%8B%88%EB%8B%A4)
@@ -19,6 +15,10 @@
     - [성능 뷰](#%EC%84%B1%EB%8A%A5-%EB%B7%B0)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+[TOC]
+
+
 
 Altibase 7.1.0.4.8 Patch Notes
 ==============================
