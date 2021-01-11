@@ -492,16 +492,17 @@ Fixed Bugs
     
     Last Updated File : /system001.dbf                                                         \<\<-- 추가된 메시지
 
--   **재현 방법**
--   **재현 절차**
-    
--   **수행 결과**
-    
--   **예상 결과**
-    
+- **재현 방법**
+  -   **재현 절차**
+      
+  -   **수행 결과**
+      
+  -   **예상 결과**
+
 -   **Workaround**
 
--   **변경사항**
+- **변경사항**
+
 -   Performance view
     -   Property
     -   Compile Option
