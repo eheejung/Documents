@@ -1,9 +1,6 @@
-[TOC]
-
-
-
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 
 - [Altibase 7.1.0.4.8 Patch Notes](#altibase-71048-patch-notes)
   - [New Features](#new-features)
