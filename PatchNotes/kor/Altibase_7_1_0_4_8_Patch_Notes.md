@@ -40,20 +40,20 @@ New Features
 
 -   **증상** : 차단 설정된 IP 주소에서 Altibase 서버로 접속 시도 시 altibase\_boot.log에 기록되는 에러 메시지가 변경되었습니다. 
     
-​           ACL 설정 뒤에 접속을 시도한 클라이언트 IP 주소가 추가되었습니다.
+    ACL 설정 뒤에 접속을 시도한 클라이언트 IP 주소가 추가되었습니다.
     
-​           \* 변경 전
+    \* 변경 전
     
-​              ERR-410e9(errno=0) Connection is not permitted by the ACCESS\_LIST:0.0.0.0
+    ERR-410e9(errno=0) Connection is not permitted by the ACCESS\_LIST:0.0.0.0
     
-    ​              Dispatcher callback failed
+    Dispatcher callback failed
+    
+    \* 변경 후
+    
+    ERR-410e9(errno=0) Connection is not permitted by the ACCESS\_LIST:0.0.0.0 **( IP : *Client IP Address* )**
+    
+    Dispatcher callback failed    
 
-    ​           * 변경 후
-
-    ​              ERR-410e9(errno=0) Connection is not permitted by the ACCESS\_LIST:0.0.0.0 **( IP : *Client IP Address* )**
-
-    ​              Dispatcher callback failed
-    
 - **재현 방법**
 
   -   **재현 절차**
@@ -67,13 +67,17 @@ New Features
 
   - **수행 결과**
 
-        ERR-410e9(errno=0) Connection is not permitted by the ACCESS_LIST: 0.0.0.0
-        Dispatcher callback failed                                                                      
+    ```bash
+    ERR-410e9(errno=0) Connection is not permitted by the ACCESS_LIST: 0.0.0.0
+    Dispatcher callback failed                                                                      
+    ```
 
   -   **예상 결과**
 
-          ERR-410e9(errno=0) Connection is not permitted by the ACCESS_LIST: 0.0.0.0 ( IP : Client IP Address )
-          Dispatcher callback failed
+      ```bash
+      ERR-410e9(errno=0) Connection is not permitted by the ACCESS_LIST: 0.0.0.0 ( IP : Client IP Address )
+      Dispatcher callback failed
+      ```
 
 -   **Workaround**
 
@@ -94,33 +98,39 @@ New Features
 
 -   **증상** : 트리거와 PSM 생성 시 TIMESTAMP 컬럼을 가진 테이블을 포함한 경우 ERR-31028 : Unable to create a column with the specified data type. 에러가 발생합니다. 이는 TIMESTAMP 관련 제약으로 발생하는 정상적인 에러이나 사용자 편의를 위해 제약 사항을 제거하여 트리거 및 PSM 생성이 가능하도록 변경합니다.
     
--   **재현 방법**
+- **재현 방법**
 
-    -   **재현 절차**
+  - **재현 절차**
 
-            DROP TRIGGER i3;
-            DROP TABLE test_tri CASCADE;
-            CREATE TABLE test_tri (c1 INTEGER, c2 TIMESTAMP);
-            CREATE TRIGGER i3
-            BEFORE INSERT ON test_tri
-            REFERENCING NEW ROW NEW_ROW
-            FOR EACH ROW
-            AS BEGIN
-            NEW_ROW.c2 := '2020100500' ;
-            END;
-            /
+    ```sql
+    DROP TRIGGER i3;
+    DROP TABLE test_tri CASCADE;
+    CREATE TABLE test_tri (c1 INTEGER, c2 TIMESTAMP);
+    CREATE TRIGGER i3
+    BEFORE INSERT ON test_tri
+    REFERENCING NEW ROW NEW_ROW
+    FOR EACH ROW
+    AS BEGIN
+    NEW_ROW.c2 := '2020100500' ;
+    END;
+    /
+    ```
 
-    -   **수행 결과**
+  - **수행 결과**
 
-            [ERR-31028 : Unable to create a column with the specified data type.
-            In trigger SYS.I3
-            0003 : referencing new row NEW_ROW
-                                      ^      ^
-            ]
+    ```sql
+    [ERR-31028 : Unable to create a column with the specified data type.
+    In trigger SYS.I3
+    0003 : referencing new row NEW_ROW
+                              ^      ^
+    ]
+    ```
 
-    -   **예상 결과**
+  -   **예상 결과**
 
-            Create success.
+      ```SQL
+      Create success.
+      ```
 
 -   **Workaround**
 
@@ -315,9 +325,13 @@ Fixed Bugs
     -   Error Code
         -   에러 메시지가 추가되었습니다.
 
-            0x51099 ( 331929) ulERR\_ABORT\_LOCK\_SEQUENCE\_ERR Lock sequence error. 
- \# \*Cause: invalid Lock call sequence.
+            ```bash
+0x51099 ( 331929) ulERR\_ABORT\_LOCK\_SEQUENCE\_ERR Lock sequence error. 
+             \# \*Cause: invalid Lock call sequence.
              \# \*Action: Try disconnect and reconnect 
+            ```
+            
+            
 
 ### BUG-48273 PIVOT 절의 집계 함수 처리 과정에서 Altibase 서버가 비정상 종료할 수 있습니다.
 
@@ -333,93 +347,95 @@ Fixed Bugs
 
   - **재현 절차**
 
-        DROP TABLE t14;
-        CREATE TABLE t14 (
-        rslt_reprt_pk   NUMERIC(22),
-        evl_score       VARCHAR(5),
-        chklist_item_pk NUMERIC(22)
-        ) TABLESPACE SYS_TBS_DISK_DATA;
-        
-        INSERT INTO t14 VALUES( 205, '1', 135);
-        INSERT INTO t14 VALUES( 205, NULL, 1349);
-        INSERT INTO t14 VALUES( 205, NULL, 1340);
-        INSERT INTO t14 VALUES( 205, NULL, 1341);
-        INSERT INTO t14 VALUES( 205, '1', 134);
-        INSERT INTO t14 VALUES( 205, NULL, 1339);
-        INSERT INTO t14 VALUES( 205, NULL, 1330);
-        INSERT INTO t14 VALUES( 205, NULL, 1331);
-        INSERT INTO t14 VALUES( 205, '1', 133);
-        INSERT INTO t14 VALUES( 205, NULL, 1329);
-        INSERT INTO t14 VALUES( 205, NULL, 1320);
-        INSERT INTO t14 VALUES( 205, NULL, 1321);
-        INSERT INTO t14 VALUES( 205, '1', 132);
-        INSERT INTO t14 VALUES( 205, NULL, 1319);
-        INSERT INTO t14 VALUES( 205, NULL, 1310);
-        INSERT INTO t14 VALUES( 205, NULL, 1311);
-        INSERT INTO t14 VALUES( 205, '1', 131);
-        INSERT INTO t14 VALUES( 205, 'A', 13);
-        INSERT INTO t14 VALUES( 205, NULL, 1269);
-        INSERT INTO t14 VALUES( 205, NULL, 1260);
-        
-        DROP TABLE t24;
-        CREATE TABLE t24 (
-        rslt_reprt_pk       NUMERIC(22),
-        chk_oprtn_pk        NUMERIC(22),
-        last_trsct_sttus_cd VARCHAR(2)
-        ) TABLESPACE SYS_TBS_DISK_DATA;
-        
-        INSERT INTO t24 VALUES(196, 612, '02');
-        INSERT INTO t24 VALUES(203, 683, '02');
-        INSERT INTO t24 VALUES(205, 717, '07');
-        INSERT INTO t24 VALUES(224, 726, '03');
-        INSERT INTO t24 VALUES(232, 751, '02');
-        INSERT INTO t24 VALUES(243, 808, '02');
-        INSERT INTO t24 VALUES(251, 811, '05');
-        INSERT INTO t24 VALUES(314, 1002, '03');
-        INSERT INTO t24 VALUES(345, 937, '02');
-        INSERT INTO t24 VALUES(347, 933, '02');
-        INSERT INTO t24 VALUES(353, 820, '02');
-        INSERT INTO t24 VALUES(356, 819, '03');
-        INSERT INTO t24 VALUES(357, 999, '02');
-        INSERT INTO t24 VALUES(363, 998, '03');
-        INSERT INTO t24 VALUES(365, 959, '02');
-        INSERT INTO t24 VALUES(386, 951, '02');
-        INSERT INTO t24 VALUES(388, 994, '02');
-        INSERT INTO t24 VALUES(182, 596, '06');
-        INSERT INTO t24 VALUES(208, 729, '08');
-        INSERT INTO t24 VALUES(247, 815, '06');
-        
-        DROP TABLE t34;
-        CREATE TABLE t34 (
-        rslt_reprt_pk NUMERIC(22)
-        ) TABLESPACE SYS_TBS_DISK_DATA;
-        INSERT INTO t34 VALUES(196);
-        INSERT INTO t34 VALUES(203);
-        INSERT INTO t34 VALUES(205);
-        INSERT INTO t34 VALUES(205);
-        INSERT INTO t34 VALUES(205);
-        INSERT INTO t34 VALUES(224);
-        
-        SELECT /*+ USE_HASH( t34, tt4 ) */ * 
-          FROM t34, 
-               (SELECT *
-                  FROM (SELECT a.rslt_reprt_pk,
-                               a.chklist_item_pk,
-                               a.evl_score,
-                               b.chk_oprtn_pk
-                          FROM t14 a ,
-                               t24 b
-                         WHERE a.rslt_reprt_pk = b.rslt_reprt_pk
-                           AND b.last_trsct_sttus_cd = '07'
-                       ) 
-                 PIVOT ( MAX(evl_score) FOR chklist_item_pk IN (
-                 11, 111, 112, 113, 114, 115, 12, 124, 121, 122, 123, 125, 126, 13, 134, 136, 135, 133, 132, 131,
-                 22, 221, 222, 223, 23, 233, 234, 231, 232, 21, 211, 212,      
-                 32, 321, 322, 31, 311, 41, 411, 414, 413, 412, 42, 424, 421, 423, 422, 43, 431,
-                 52, 521, 522, 523, 53, 533, 534, 532, 531, 51, 511, 512, 513))
-               ) tt4
-          WHERE t34.rslt_reprt_pk = tt4.rslt_reprt_pk
-        ;
+    ```sql
+    DROP TABLE t14;
+    CREATE TABLE t14 (
+    rslt_reprt_pk   NUMERIC(22),
+    evl_score       VARCHAR(5),
+    chklist_item_pk NUMERIC(22)
+    ) TABLESPACE SYS_TBS_DISK_DATA;
+    
+    INSERT INTO t14 VALUES( 205, '1', 135);
+    INSERT INTO t14 VALUES( 205, NULL, 1349);
+    INSERT INTO t14 VALUES( 205, NULL, 1340);
+    INSERT INTO t14 VALUES( 205, NULL, 1341);
+    INSERT INTO t14 VALUES( 205, '1', 134);
+    INSERT INTO t14 VALUES( 205, NULL, 1339);
+    INSERT INTO t14 VALUES( 205, NULL, 1330);
+    INSERT INTO t14 VALUES( 205, NULL, 1331);
+    INSERT INTO t14 VALUES( 205, '1', 133);
+    INSERT INTO t14 VALUES( 205, NULL, 1329);
+    INSERT INTO t14 VALUES( 205, NULL, 1320);
+    INSERT INTO t14 VALUES( 205, NULL, 1321);
+    INSERT INTO t14 VALUES( 205, '1', 132);
+    INSERT INTO t14 VALUES( 205, NULL, 1319);
+    INSERT INTO t14 VALUES( 205, NULL, 1310);
+    INSERT INTO t14 VALUES( 205, NULL, 1311);
+    INSERT INTO t14 VALUES( 205, '1', 131);
+    INSERT INTO t14 VALUES( 205, 'A', 13);
+    INSERT INTO t14 VALUES( 205, NULL, 1269);
+    INSERT INTO t14 VALUES( 205, NULL, 1260);
+    
+    DROP TABLE t24;
+    CREATE TABLE t24 (
+    rslt_reprt_pk       NUMERIC(22),
+    chk_oprtn_pk        NUMERIC(22),
+    last_trsct_sttus_cd VARCHAR(2)
+    ) TABLESPACE SYS_TBS_DISK_DATA;
+    
+    INSERT INTO t24 VALUES(196, 612, '02');
+    INSERT INTO t24 VALUES(203, 683, '02');
+    INSERT INTO t24 VALUES(205, 717, '07');
+    INSERT INTO t24 VALUES(224, 726, '03');
+    INSERT INTO t24 VALUES(232, 751, '02');
+    INSERT INTO t24 VALUES(243, 808, '02');
+    INSERT INTO t24 VALUES(251, 811, '05');
+    INSERT INTO t24 VALUES(314, 1002, '03');
+    INSERT INTO t24 VALUES(345, 937, '02');
+    INSERT INTO t24 VALUES(347, 933, '02');
+    INSERT INTO t24 VALUES(353, 820, '02');
+    INSERT INTO t24 VALUES(356, 819, '03');
+    INSERT INTO t24 VALUES(357, 999, '02');
+    INSERT INTO t24 VALUES(363, 998, '03');
+    INSERT INTO t24 VALUES(365, 959, '02');
+    INSERT INTO t24 VALUES(386, 951, '02');
+    INSERT INTO t24 VALUES(388, 994, '02');
+    INSERT INTO t24 VALUES(182, 596, '06');
+    INSERT INTO t24 VALUES(208, 729, '08');
+    INSERT INTO t24 VALUES(247, 815, '06');
+    
+    DROP TABLE t34;
+    CREATE TABLE t34 (
+    rslt_reprt_pk NUMERIC(22)
+    ) TABLESPACE SYS_TBS_DISK_DATA;
+    INSERT INTO t34 VALUES(196);
+    INSERT INTO t34 VALUES(203);
+    INSERT INTO t34 VALUES(205);
+    INSERT INTO t34 VALUES(205);
+    INSERT INTO t34 VALUES(205);
+    INSERT INTO t34 VALUES(224);
+    
+    SELECT /*+ USE_HASH( t34, tt4 ) */ * 
+      FROM t34, 
+           (SELECT *
+              FROM (SELECT a.rslt_reprt_pk,
+                           a.chklist_item_pk,
+                           a.evl_score,
+                           b.chk_oprtn_pk
+                      FROM t14 a ,
+                           t24 b
+                     WHERE a.rslt_reprt_pk = b.rslt_reprt_pk
+                       AND b.last_trsct_sttus_cd = '07'
+                   ) 
+             PIVOT ( MAX(evl_score) FOR chklist_item_pk IN (
+             11, 111, 112, 113, 114, 115, 12, 124, 121, 122, 123, 125, 126, 13, 134, 136, 135, 133, 132, 131,
+             22, 221, 222, 223, 23, 233, 234, 231, 232, 21, 211, 212,      
+             32, 321, 322, 31, 311, 41, 411, 414, 413, 412, 42, 424, 421, 423, 422, 43, 431,
+             52, 521, 522, 523, 53, 533, 534, 532, 531, 51, 511, 512, 513))
+           ) tt4
+      WHERE t34.rslt_reprt_pk = tt4.rslt_reprt_pk
+    ;
+    ```
 
   -   **수행 결과**
 
@@ -427,16 +443,20 @@ Fixed Bugs
 
   -   **예상 결과**
 
-          RSLT_REPRT_PK RSLT_REPRT_PK CHK_OPRTN_PK 11 111 112 113 114 115 12 124 121 122 123 125 126 13 134 136 135 133 132 131 22 221 222 223 23 233 234 231 232 21 211 212 32 321 322 31 311 41 411 414 413 412 42 424 421 423 422 43 431 52 521 522 523 53 533 534 532 531 51 511 512 513
-          -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-          205 205 717 A 1 1 1 1 1
-          205 205 717 A 1 1 1 1 1
-          205 205 717 A 1 1 1 1 1
-          3 rows selected.
+      ```SQL
+      RSLT_REPRT_PK RSLT_REPRT_PK CHK_OPRTN_PK 11 111 112 113 114 115 12 124 121 122 123 125 126 13 134 136 135 133 132 131 22 221 222 223 23 233 234 231 232 21 211 212 32 321 322 31 311 41 411 414 413 412 42 424 421 423 422 43 431 52 521 522 523 53 533 534 532 531 51 511 512 513
+      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      205 205 717 A 1 1 1 1 1
+      205 205 717 A 1 1 1 1 1
+      205 205 717 A 1 1 1 1 1
+      3 rows selected.
+      ```
 
--   **Workaround**
+- **Workaround**
 
-        /*+ USE_HASH( t34, tt4 ) */ 힌트를 /*+ USE_HASH( tt4, t34  ) */ 로 변경하여 수행합니다.
+  ```sql
+  /*+ USE_HASH( t34, tt4 ) */ 힌트를 /*+ USE_HASH( tt4, t34  ) */ 로 변경하여 수행합니다.
+  ```
 
 -   **변경사항**
 
@@ -455,28 +475,27 @@ Fixed Bugs
 
 -   **증상** : Recovery 수행 중 오류 상황과 관계없이 출력되는 에러 메시지를 제거하고 필요한 메시지를 추가합니다. 
     
-altibase\_error.log에 다음과 같이 기록됩니다.
+    altibase\_error.log에 다음과 같이 기록됩니다.
     
-[2020/11/09 13:44:44F8][PID:17326][Thread-140124726007552][LWP-17451]
+    [2020/11/09 13:44:44F8][PID:17326][Thread-140124726007552][LWP-17451]
     
     DRDB WAL protocol violation : DB UpdateLSN=[0,10,1176611] \>RedoLSN=[0,8,0]   
-
+    
     [2020/11/09 13:44:44FA][PID:17326][Thread-140124726007552][LWP-17451]
     
-Last Updated SpaceID: 2, PageID: 9, FileID: 0, FPageID: 9                    \<\<-- 추가된 메시지
+    Last Updated SpaceID: 2, PageID: 9, FileID: 0, FPageID: 9                    \<\<-- 추가된 메시지
     
-[2020/11/09 13:44:44FB][PID:17326][Thread-140124726007552][LWP-17451]
+    [2020/11/09 13:44:44FB][PID:17326][Thread-140124726007552][LWP-17451]
     
     Last Updated File : /system001.dbf                                                         \<\<-- 추가된 메시지
 
 -   **재현 방법**
-
-    -   **재현 절차**
-
-    -   **수행 결과**
-
-    -   **예상 결과**
-
+-   **재현 절차**
+    
+-   **수행 결과**
+    
+-   **예상 결과**
+    
 -   **Workaround**
 
 -   **변경사항**
@@ -525,7 +544,9 @@ Last Updated SpaceID: 2, PageID: 9, FileID: 0, FPageID: 9               �
 
   -   **예상 결과**
 
-          EmpName : 1 aaa
+      ```JAVA
+      EmpName : 1 aaa
+      ```
 
 -   **Workaround**
 
