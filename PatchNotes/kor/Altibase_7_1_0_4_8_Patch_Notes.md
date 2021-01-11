@@ -1,7 +1,6 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-
 - [Altibase 7.1.0.4.8 Patch Notes](#altibase-71048-patch-notes)
   - [New Features](#new-features)
     - [BUG-46787 ACL(Access Control List)에 차단 설정된 IP 주소에서 접속 시도 시 altibase\_boot.log에 기록되는 에러 메시지에 IP 주소를 추가합니다.](#bug-46787aclaccess-control-list%EC%97%90-%EC%B0%A8%EB%8B%A8-%EC%84%A4%EC%A0%95%EB%90%9C-ip-%EC%A3%BC%EC%86%8C%EC%97%90%EC%84%9C-%EC%A0%91%EC%86%8D-%EC%8B%9C%EB%8F%84-%EC%8B%9C-altibase%5C_bootlog%EC%97%90-%EA%B8%B0%EB%A1%9D%EB%90%98%EB%8A%94-%EC%97%90%EB%9F%AC-%EB%A9%94%EC%8B%9C%EC%A7%80%EC%97%90-ip-%EC%A3%BC%EC%86%8C%EB%A5%BC-%EC%B6%94%EA%B0%80%ED%95%A9%EB%8B%88%EB%8B%A4)
@@ -23,6 +22,8 @@
     - [성능 뷰](#%EC%84%B1%EB%8A%A5-%EB%B7%B0)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+  
 
 Altibase 7.1.0.4.8 Patch Notes
 ==============================
