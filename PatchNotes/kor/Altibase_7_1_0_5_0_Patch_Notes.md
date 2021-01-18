@@ -127,7 +127,7 @@ New Features
 
   - Property
 
-    - \__OPTIMIZER_UNNEST_COMPATIBILITY 
+    - __OPTIMIZER_UNNEST_COMPATIBILITY 
 
       - 속성 설명 : Subquery unnest에 대한 하위호환성 프로퍼티
 
@@ -144,7 +144,7 @@ New Features
 
   -   Error Code
 
-### BUG-48358 aexport 수행 시 run\_il\_out.sh 파일에 -geom WKB 를 추가하기 위한 옵션을 제공합니다.
+### BUG-48358 aexport 수행 시 run_il_out.sh 파일에 -geom WKB 를 추가하기 위한 옵션을 제공합니다.
 
 -   **module** : ux-aexport
 
@@ -152,9 +152,9 @@ New Features
 
 -   **재현 빈도** : Always
 
--   **증상** : aexport 프로퍼티 ILOADER\_GEOM\_FORMAT 이 추가되었습니다.
+-   **증상** : aexport 프로퍼티 ILOADER_GEOM_FORMAT 이 추가되었습니다.
 
-    aexport.properties 파일에 ILOADER\_GEOM\_FORMAT = WKB 옵션을 사용한 경우 run\_il\_out.sh 파일에 -geom WKB 옵션이 추가된 iloader 명령문이 저장됩니다.
+    aexport.properties 파일에 ILOADER_GEOM_FORMAT = WKB 옵션을 사용한 경우 run_il_out.sh 파일에 -geom WKB 옵션이 추가된 iloader 명령문이 저장됩니다.
     
     Altibase 7.1.0.4.0 이상에서 EWKT(Extended Well-Known Text) 형식으로 공간 데이터가 입력된 경우 사용합니다.
 
@@ -165,23 +165,23 @@ CREATE TABLE TB3(ID INTEGER PRIMARY KEY, OBJ GEOMETRY);
     
 // ID 121, 123 데이터는 WKT 형식으로 입력, 122, 124 데이터는 EWKT 형식으로 입력
     
-    INSERT INTO TB3 VALUES (121, ST\_POLYGONFROMTEXT('POLYGON((10 10, 10 20, 20 20, 20 15, 10 10))'));
+    INSERT INTO TB3 VALUES (121, ST_POLYGONFROMTEXT('POLYGON((10 10, 10 20, 20 20, 20 15, 10 10))'));
     
-    INSERT INTO TB3 VALUES (122, ST\_POLYGONFROMTEXT('POLYGON((10 10, 10 20, 20 20, 20 15, 10 10))', 100));
+    INSERT INTO TB3 VALUES (122, ST_POLYGONFROMTEXT('POLYGON((10 10, 10 20, 20 20, 20 15, 10 10))', 100));
 
-INSERT INTO TB3 VALUES (123, ST\_POLYGONFROMTEXT('MULTILINESTRING((10 10, 20 20), (15 15, 30 15))'));'
+INSERT INTO TB3 VALUES (123, ST_POLYGONFROMTEXT('MULTILINESTRING((10 10, 20 20), (15 15, 30 15))'));'
     
-    INSERT INTO TB3 VALUES (124, ST\_POLYGONFROMTEXT('SRID=100;POLYGON((10 10, 10 20, 20 20, 20 15, 10 10))'));
+    INSERT INTO TB3 VALUES (124, ST_POLYGONFROMTEXT('SRID=100;POLYGON((10 10, 10 20, 20 20, 20 15, 10 10))'));
 
 
 ​    
 ​    
-​    1) ILOADER\_GEOM\_FORMAT 프로퍼티 사용 없이 aexport 수행한 경우
+​    1) ILOADER_GEOM_FORMAT 프로퍼티 사용 없이 aexport 수행한 경우
 ​    
-​    1-1) run\_il\_out.sh 결과
+​    1-1) run_il_out.sh 결과
 ​    
-    iloader -s localhost -u SYS -p manager out -f SYS\_TB3.fmt -d SYS\_TB3.dat -log SYS\_TB3.log -NLS\_USE UTF8
-    
+​    iloader -s localhost -u SYS -p manager out -f SYS_TB3.fmt -d SYS_TB3.dat -log SYS_TB3.log -NLS_USE UTF8
+​    
     1-2) EWKT형식을 지원하지 않는  Altibase 7.1.0.4.0 이전 버전으로 iloader in 수행 결과
     
     ERR-A1018 에러가 발생합니다.
@@ -190,7 +190,7 @@ INSERT INTO TB3 VALUES (123, ST\_POLYGONFROMTEXT('MULTILINESTRING((10 10, 20 20)
 
 Error Count : 2
     
-    SYS\_TB3.log
+    SYS_TB3.log
     
     Record 2 : 122,[GEOMETRY]
     
@@ -203,11 +203,11 @@ Error Count : 2
 
 ​    
 
-    2) aexport.properties 파일에 ILOADER\_GEOM\_FORMAT 프로퍼티 추가 후 aexport 수행한 경우
+    2) aexport.properties 파일에 ILOADER_GEOM_FORMAT 프로퍼티 추가 후 aexport 수행한 경우
     
-    2-1) run\_il\_out.sh 결과
+    2-1) run_il_out.sh 결과
     
-    iloader -s localhost -u SYS -p manager out -f SYS\_TB3.fmt -d SYS\_TB3.dat -log SYS\_TB3.log -NLS\_USE UTF8 -geom WKB
+    iloader -s localhost -u SYS -p manager out -f SYS_TB3.fmt -d SYS_TB3.dat -log SYS_TB3.log -NLS_USE UTF8 -geom WKB
     
     2-2) EWKT형식을 지원하지 않는 Altibase 7.1.0.4.0 이전 버전으로 iloader in 수행 결과
 
@@ -228,7 +228,7 @@ Load Count  : 4(TB3)
   -   Performance view
 
   -   Property
-      -   aexport 프로퍼티 ILOADER\_GEOM\_FORMAT 이 추가되었습니다. 
+      -   aexport 프로퍼티 ILOADER_GEOM_FORMAT 이 추가되었습니다. 
 
   -   Compile Option
 
@@ -286,7 +286,7 @@ Fixed Bugs
 
   -   Error Code
 
-### BUG-48405 OPTIMIZER\_ANSI\_JOIN\_ORDERING = 1 이고 LEFT OUTER JOIN 과 다른 JOIN 이 함께 사용된 경우 Altibase 서버가 비정상 종료할 수 있습니다.
+### BUG-48405 OPTIMIZER_ANSI_JOIN_ORDERING = 1 이고 LEFT OUTER JOIN 과 다른 JOIN 이 함께 사용된 경우 Altibase 서버가 비정상 종료할 수 있습니다.
 
 -   **module** : qp-select-pvo
 
@@ -294,12 +294,12 @@ Fixed Bugs
 
 -   **재현 빈도** : Always
 
--   **증상** : OPTIMIZER\_ANSI\_JOIN\_ORDERING = 1 에서 Altibase 서버가 비정상 종료하거나 결과 오류가 발생하는 현상을 수정했습니다.
+-   **증상** : OPTIMIZER_ANSI_JOIN_ORDERING = 1 에서 Altibase 서버가 비정상 종료하거나 결과 오류가 발생하는 현상을 수정했습니다.
     
 
 아래 조건을 모두 만족하는 경우 발생할 수 있습니다.
     
-- OPTIMIZER\_ANSI\_JOIN\_ORDERING = 1
+- OPTIMIZER_ANSI_JOIN_ORDERING = 1
   
 - LEFT OUTER JOIN 이 2개 이상 사용되고 다른 JOIN 함께 사용된 경우
   
@@ -472,7 +472,7 @@ Changes
 | ---------------- | ----------------------- | ------------ | ------------------- | ---------------------------- | ---------------- |
 | 7.1.0.5.0        | 6.5.1                   | 8.9.1        | 7.1.7               | 7.4.6                        | 2.2.1            |
 
-> Altibase 7.1 패치 버전별 히스토리는 [Version\_Histories](https://github.com/ALTIBASE/Documents/blob/master/PatchNotes/Altibase_7_1_Version_Histories.md)에서 확인할 수 있다.
+> Altibase 7.1 패치 버전별 히스토리는 [Version_Histories](https://github.com/ALTIBASE/Documents/blob/master/PatchNotes/Altibase_7_1_Version_Histories.md)에서 확인할 수 있다.
 
 ### 호환성
 
@@ -506,11 +506,11 @@ Replication 프로토콜 버전은 변경되지 않았다.
 
 #### 추가된 프로퍼티
 
-ILOADER\_GEOM\_FORMAT
+ILOADER_GEOM_FORMAT
 
 #### 변경된 프로퍼티
 
-\__OPTIMIZER_UNNEST_COMPATIBILITY
+__OPTIMIZER_UNNEST_COMPATIBILITY
 
 ### 성능 뷰
 
