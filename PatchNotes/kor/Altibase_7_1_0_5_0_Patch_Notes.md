@@ -182,8 +182,8 @@ INSERT INTO TB3 VALUES (123, ST_POLYGONFROMTEXT('MULTILINESTRING((10 10, 20 20),
 ​    
 ​    iloader -s localhost -u SYS -p manager out -f SYS_TB3.fmt -d SYS_TB3.dat -log SYS_TB3.log -NLS_USE UTF8
 ​    
-    1-2) EWKT형식을 지원하지 않는  Altibase 7.1.0.4.0 이전 버전으로 iloader in 수행 결과
-    
+​    1-2) EWKT형식을 지원하지 않는  Altibase 7.1.0.4.0 이전 버전으로 iloader in 수행 결과
+​    
     ERR-A1018 에러가 발생합니다.
     
     Load Count  : 2(TB3)
