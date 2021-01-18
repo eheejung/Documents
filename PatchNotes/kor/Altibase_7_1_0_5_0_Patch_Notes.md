@@ -5,10 +5,10 @@
 - [Altibase 7.1.0.5.0 Patch Notes](#altibase-71050-patch-notes)
   - [New Features](#new-features)
     - [BUG-48336 서브쿼리 Unnesting 대상 조건에서 제외하기 위한 기능을 추가합니다.](#bug-48336%C2%A0%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC-unnesting-%EB%8C%80%EC%83%81-%EC%A1%B0%EA%B1%B4%EC%97%90%EC%84%9C-%EC%A0%9C%EC%99%B8%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-%EA%B8%B0%EB%8A%A5%EC%9D%84-%EC%B6%94%EA%B0%80%ED%95%A9%EB%8B%88%EB%8B%A4)
-    - [BUG-48358 aexport 수행 시 run\_il\_out.sh 파일에 -geom WKB 를 추가하기 위한 옵션을 제공합니다.](#bug-48358%C2%A0aexport-%EC%88%98%ED%96%89-%EC%8B%9C-run_il_outsh-%ED%8C%8C%EC%9D%BC%EC%97%90--geom-wkb-%EB%A5%BC-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-%EC%98%B5%EC%85%98%EC%9D%84-%EC%A0%9C%EA%B3%B5%ED%95%A9%EB%8B%88%EB%8B%A4)
+    - [BUG-48358 aexport 수행 시 run_il_out.sh 파일에 -geom WKB 를 추가하기 위한 옵션을 제공합니다.](#bug-48358%C2%A0aexport-%EC%88%98%ED%96%89-%EC%8B%9C-run_il_outsh-%ED%8C%8C%EC%9D%BC%EC%97%90--geom-wkb-%EB%A5%BC-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-%EC%98%B5%EC%85%98%EC%9D%84-%EC%A0%9C%EA%B3%B5%ED%95%A9%EB%8B%88%EB%8B%A4)
   - [Fixed Bugs](#fixed-bugs)
     - [BUG-48381 집합 연산자를 포함한 서브쿼리가 쿼리 변환 과정에서 DNF로 풀릴 경우 ERR-31455 : Failed to work because an internal exception occurred from an OS.[Contact Altibase's Support Center] 에러가 발생합니다.](#bug-48381%C2%A0%EC%A7%91%ED%95%A9-%EC%97%B0%EC%82%B0%EC%9E%90%EB%A5%BC-%ED%8F%AC%ED%95%A8%ED%95%9C-%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC%EA%B0%80-%EC%BF%BC%EB%A6%AC-%EB%B3%80%ED%99%98-%EA%B3%BC%EC%A0%95%EC%97%90%EC%84%9C-dnf%EB%A1%9C-%ED%92%80%EB%A6%B4-%EA%B2%BD%EC%9A%B0-err-31455--failed-to-work-because-an-internal-exception-occurred-from-an-oscontact-altibases-support-center-%EC%97%90%EB%9F%AC%EA%B0%80-%EB%B0%9C%EC%83%9D%ED%95%A9%EB%8B%88%EB%8B%A4)
-    - [BUG-48405 OPTIMIZER\_ANSI\_JOIN\_ORDERING = 1 이고 LEFT OUTER JOIN 과 다른 JOIN 이 함께 사용된 경우 Altibase 서버가 비정상 종료할 수 있습니다.](#bug-48405%C2%A0optimizer_ansi_join_ordering--1-%EC%9D%B4%EA%B3%A0-left-outer-join-%EA%B3%BC-%EB%8B%A4%EB%A5%B8-join-%EC%9D%B4-%ED%95%A8%EA%BB%98-%EC%82%AC%EC%9A%A9%EB%90%9C-%EA%B2%BD%EC%9A%B0-altibase-%EC%84%9C%EB%B2%84%EA%B0%80-%EB%B9%84%EC%A0%95%EC%83%81-%EC%A2%85%EB%A3%8C%ED%95%A0-%EC%88%98-%EC%9E%88%EC%8A%B5%EB%8B%88%EB%8B%A4)
+    - [BUG-48405 OPTIMIZER_ANSI_JOIN_ORDERING = 1 이고 LEFT OUTER JOIN 과 다른 JOIN 이 함께 사용된 경우 Altibase 서버가 비정상 종료할 수 있습니다.](#bug-48405%C2%A0optimizer_ansi_join_ordering--1-%EC%9D%B4%EA%B3%A0-left-outer-join-%EA%B3%BC-%EB%8B%A4%EB%A5%B8-join-%EC%9D%B4-%ED%95%A8%EA%BB%98-%EC%82%AC%EC%9A%A9%EB%90%9C-%EA%B2%BD%EC%9A%B0-altibase-%EC%84%9C%EB%B2%84%EA%B0%80-%EB%B9%84%EC%A0%95%EC%83%81-%EC%A2%85%EB%A3%8C%ED%95%A0-%EC%88%98-%EC%9E%88%EC%8A%B5%EB%8B%88%EB%8B%A4)
     - [BUG-48419 서브쿼리 Unnesting 제외 조건에 해당하지만, 뷰 머징(View Merging) 이 발생한 경우 서브쿼리 Unnesting 이 발생합니다.](#bug-48419%C2%A0%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC-unnesting-%EC%A0%9C%EC%99%B8-%EC%A1%B0%EA%B1%B4%EC%97%90-%ED%95%B4%EB%8B%B9%ED%95%98%EC%A7%80%EB%A7%8C-%EB%B7%B0-%EB%A8%B8%EC%A7%95view-merging-%EC%9D%B4-%EB%B0%9C%EC%83%9D%ED%95%9C-%EA%B2%BD%EC%9A%B0-%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC-unnesting-%EC%9D%B4-%EB%B0%9C%EC%83%9D%ED%95%A9%EB%8B%88%EB%8B%A4)
     - [BUG-48429 세션 타임아웃 조건에서도 세션이 종료되지 않는 현상 분석을 위한 디버깅 정보를 추가합니다.](#bug-48429%C2%A0%EC%84%B8%EC%85%98-%ED%83%80%EC%9E%84%EC%95%84%EC%9B%83-%EC%A1%B0%EA%B1%B4%EC%97%90%EC%84%9C%EB%8F%84-%EC%84%B8%EC%85%98%EC%9D%B4-%EC%A2%85%EB%A3%8C%EB%90%98%EC%A7%80-%EC%95%8A%EB%8A%94-%ED%98%84%EC%83%81-%EB%B6%84%EC%84%9D%EC%9D%84-%EC%9C%84%ED%95%9C-%EB%94%94%EB%B2%84%EA%B9%85-%EC%A0%95%EB%B3%B4%EB%A5%BC-%EC%B6%94%EA%B0%80%ED%95%A9%EB%8B%88%EB%8B%A4)
   - [Changes](#changes)
@@ -178,8 +178,8 @@ INSERT INTO TB3 VALUES (123, ST\_POLYGONFROMTEXT('MULTILINESTRING((10 10, 20 20)
 ​    
 ​    1) ILOADER\_GEOM\_FORMAT 프로퍼티 사용 없이 aexport 수행한 경우
 ​    
-    1-1) run\_il\_out.sh 결과
-    
+​    1-1) run\_il\_out.sh 결과
+​    
     iloader -s localhost -u SYS -p manager out -f SYS\_TB3.fmt -d SYS\_TB3.dat -log SYS\_TB3.log -NLS\_USE UTF8
     
     1-2) EWKT형식을 지원하지 않는  Altibase 7.1.0.4.0 이전 버전으로 iloader in 수행 결과
