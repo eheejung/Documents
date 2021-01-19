@@ -1,6 +1,6 @@
 - [Altibase 7.1.0.4.9 Patch Notes](#altibase-71049-patch-notes)
   * [New Features](#new-features)
-    + [BUG-47821 iloader에서SRID지원을 위해 Geometry 타입 처리를 WKB -\> EWKB 포맷으로 변경해야 합니다.](#bug-47821-iloader--srid-------geometry--------wkb-----ewkb--------------)
+    + [BUG-47821 iloader에서SRID지원을 위해 Geometry 타입 처리를 WKB -> EWKB 포맷으로 변경해야 합니다.](#bug-47821-iloader--srid-------geometry--------wkb-----ewkb--------------)
     + [BUG-48288 타 제품과 동일한 이름의 힌트를 Altibase 만 인식할 수 있는 방법을 제공합니다.](#bug-48288-------------------altibase---------------------)
     + [BUG-48323 aexport 에서 SRID를 지원해야 합니다](#bug-48323-aexport----srid----------)
     + [BUG-48348 partial CSE 기능 추가](#bug-48348-partial-cse------)
@@ -15,8 +15,8 @@
     + [BUG-48355 AltibaseDatabaseMeta가 생성될 때마다 v$reserved_words를 조회합니다.](#bug-48355-altibasedatabasemeta----------v-reserved-words-------)
     + [BUG-48360 Altibase.jdbc.driver.cm.CmChannel.sendPacket() 에서 예외가 발생한 경우 통신 버퍼 상태 이상으로 프로토콜이 유실될 수 있습니다.](#bug-48360-altibasejdbcdrivercmcmchannelsendpacket-----------------------------------------------)
     + [BUG-48370 DB Link 쿼리를 수행하는 세션에서 TRCLOG_DETAIL_PREDICATE = 1 설정 후 원격 테이블 조회 시 Altibase 서버가 비정상 종료할 수 있습니다.](#bug-48370-db-link---------------trclog-detail-predicate---1------------------altibase-------------------)
-    + [BUG-48390 INDEX\_BUILD\_THREAD\_COUNT 프로퍼티의 기본값이 1로 설정되는 문제가 있습니다.](#bug-48390-index--build--thread--count------------1---------------)
-    + [BUG-48393 리눅스에서 ST\_Transfrom 함수를 사용할 수 없는 문제가 있습니다.](#bug-48393-------st--transfrom----------------------)
+    + [BUG-48390 INDEX_BUILD_THREAD_COUNT 프로퍼티의 기본값이 1로 설정되는 문제가 있습니다.](#bug-48390-index--build--thread--count------------1---------------)
+    + [BUG-48393 리눅스에서 ST_Transfrom 함수를 사용할 수 없는 문제가 있습니다.](#bug-48393-------st--transfrom----------------------)
   * [Changes](#changes)
     + [Version Info](#version-info)
     + [호환성](#---)
@@ -36,7 +36,7 @@ Altibase 7.1.0.4.9 Patch Notes
 New Features
 ------------
 
-### BUG-47821 iloader에서SRID지원을 위해 Geometry 타입 처리를 WKB -\> EWKB 포맷으로 변경해야 합니다.
+### BUG-47821 iloader에서SRID지원을 위해 Geometry 타입 처리를 WKB -> EWKB 포맷으로 변경해야 합니다.
 
 -   **module** : ux-iloader
 
@@ -44,7 +44,7 @@ New Features
 
 -   **재현 빈도** : Always
 
--   **증상** : iloader에서SRID지원을 위해 Geometry 타입 처리를 WKB -\>
+-   **증상** : iloader에서SRID지원을 위해 Geometry 타입 처리를 WKB ->
     EWKB 포맷으로 변경해야 합니다.
 
 - **재현 방법**
@@ -367,7 +367,7 @@ Fixed Bugs
 
 -   **재현 빈도** : Always
 
--   **증상** : \_\_OPTIMIZER\_VIEW\_TARGET\_ENABLE = 1 에서 WITH 절과
+-   **증상** : __OPTIMIZER_VIEW_TARGET_ENABLE = 1 에서 WITH 절과
     서브쿼리가 사용된 쿼리 수행 시 결과 오류가 발생하는 현상을 수정하였습니다.
     
 - **재현 방법**
@@ -750,7 +750,7 @@ Fixed Bugs
 
 -   **재현 빈도** : Always
 
--   **증상** : AltibaseDatabaseMetadata가 생성될 때마다 v\$reserved를 조회하는 경우, 불필요한 자원이 낭비되는 문제가 있어 수정합니다.
+-   **증상** : AltibaseDatabaseMetadata가 생성될 때마다 v$reserved를 조회하는 경우, 불필요한 자원이 낭비되는 문제가 있어 수정합니다.
     
 -   **재현 방법**
 
@@ -840,7 +840,7 @@ Fixed Bugs
     -   Compile Option
     -   Error Code
 
-### BUG-48390 INDEX\_BUILD\_THREAD\_COUNT 프로퍼티의 기본값이 1로 설정되는 문제가 있습니다.
+### BUG-48390 INDEX_BUILD_THREAD_COUNT 프로퍼티의 기본값이 1로 설정되는 문제가 있습니다.
 
 -   **module** : id
 
@@ -849,7 +849,7 @@ Fixed Bugs
 -   **재현 빈도** : Unknown
 
 -   **증상** : CPU코어갯수를 리턴하는 내부함수의 문제로 인해,
-    7.1.0.4.5부터 INDEX\_BUILD\_THREAD\_COUNT 프로퍼티의 기본값이 1로
+    7.1.0.4.5부터 INDEX_BUILD_THREAD_COUNT 프로퍼티의 기본값이 1로
     설정되는 문제가 있습니다. 이로 인해 인덱스 빌드시 쓰레드 갯수가 너무
     작게 설정되어 빌드성능이 나오지 않는 문제가 있었으며, 본패치는 해당문제를 해결합니다.
     
@@ -869,7 +869,7 @@ Fixed Bugs
     -   Compile Option
     -   Error Code
 
-### BUG-48393 리눅스에서 ST\_Transfrom 함수를 사용할 수 없는 문제가 있습니다.
+### BUG-48393 리눅스에서 ST_Transfrom 함수를 사용할 수 없는 문제가 있습니다.
 
 -   **module** : st-spatial
 
@@ -877,7 +877,7 @@ Fixed Bugs
 
 -   **재현 빈도** : Always
 
--   **증상** : 7.1.0.4.5 부터 리눅스에서 ST\_Transfrom 함수를 사용할 수 없는 문제를 수정하였습니다.
+-   **증상** : 7.1.0.4.5 부터 리눅스에서 ST_Transfrom 함수를 사용할 수 없는 문제를 수정하였습니다.
     
 -   **재현 방법**
 -   **재현 절차**
@@ -903,7 +903,7 @@ Changes
 | ---------------- | ----------------------- | ------------ | ------------------- | ---------------------------- | ---------------- |
 | 7.1.0.4.9        | 6.5.1                   | 8.9.1        | 7.1.7               | 7.4.6                        | 2.2.1            |
 
-> Altibase 7.1 패치 버전별 히스토리는 [Version\_Histories](https://github.com/ALTIBASE/Documents/blob/master/PatchNotes/Altibase_7_1_Version_Histories.md)에서 확인할 수 있다.
+> Altibase 7.1 패치 버전별 히스토리는 [Version_Histories](https://github.com/ALTIBASE/Documents/blob/master/PatchNotes/Altibase_7_1_Version_Histories.md)에서 확인할 수 있다.
 
 ### 호환성
 
