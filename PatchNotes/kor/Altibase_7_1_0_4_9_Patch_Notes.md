@@ -28,7 +28,7 @@
     + [프로퍼티](#----)
     + [성능 뷰](#----)
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 Altibase 7.1.0.4.9 Patch Notes
 ==============================
