@@ -3,7 +3,7 @@
 
 - [Altibase 7.1.0.4.9 Patch Notes](#altibase-71049-patch-notes)
   - [New Features](#new-features)
-    - [BUG-47821 iloader에서SRID지원을 위해 Geometry 타입 처리를 WKB -> EWKB 포맷으로 변경해야 합니다.](#bug-47821%C2%A0iloader%EC%97%90%EC%84%9Csrid%EC%A7%80%EC%9B%90%EC%9D%84-%EC%9C%84%ED%95%B4-geometry-%ED%83%80%EC%9E%85-%EC%B2%98%EB%A6%AC%EB%A5%BC-wkb---ewkb-%ED%8F%AC%EB%A7%B7%EC%9C%BC%EB%A1%9C-%EB%B3%80%EA%B2%BD%ED%95%B4%EC%95%BC-%ED%95%A9%EB%8B%88%EB%8B%A4)
+    - [BUG-47821 iloader에서SRID지원을 위해 Geometry 타입 처리를 WKB -> EWKB 포맷으로 변경해야 합니다.](#bug-47821iloader%EC%97%90%EC%84%9Csrid%EC%A7%80%EC%9B%90%EC%9D%84-%EC%9C%84%ED%95%B4-geometry-%ED%83%80%EC%9E%85-%EC%B2%98%EB%A6%AC%EB%A5%BC-wkb---ewkb-%ED%8F%AC%EB%A7%B7%EC%9C%BC%EB%A1%9C-%EB%B3%80%EA%B2%BD%ED%95%B4%EC%95%BC-%ED%95%A9%EB%8B%88%EB%8B%A4)
     - [BUG-48288 타 제품과 동일한 이름의 힌트를 Altibase 만 인식할 수 있는 방법을 제공합니다.](#bug-48288%C2%A0%ED%83%80-%EC%A0%9C%ED%92%88%EA%B3%BC-%EB%8F%99%EC%9D%BC%ED%95%9C-%EC%9D%B4%EB%A6%84%EC%9D%98-%ED%9E%8C%ED%8A%B8%EB%A5%BC-altibase-%EB%A7%8C-%EC%9D%B8%EC%8B%9D%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8A%94-%EB%B0%A9%EB%B2%95%EC%9D%84-%EC%A0%9C%EA%B3%B5%ED%95%A9%EB%8B%88%EB%8B%A4)
     - [BUG-48323 aexport 에서 SRID를 지원해야 합니다](#bug-48323%C2%A0aexport-%EC%97%90%EC%84%9C-srid%EB%A5%BC-%EC%A7%80%EC%9B%90%ED%95%B4%EC%95%BC-%ED%95%A9%EB%8B%88%EB%8B%A4)
     - [BUG-48348 partial CSE 기능 추가](#bug-48348%C2%A0partial-cse-%EA%B8%B0%EB%8A%A5-%EC%B6%94%EA%B0%80)
