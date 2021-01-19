@@ -29,6 +29,38 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
+- [Altibase 7.1.0.4.9 Patch Notes](#altibase-71049-patch-notes)
+  * [New Features](#new-features)
+    + [BUG-47821 iloader에서SRID지원을 위해 Geometry 타입 처리를 WKB -\> EWKB 포맷으로 변경해야 합니다.](#bug-47821-iloader--srid-------geometry--------wkb-----ewkb--------------)
+    + [BUG-48288 타 제품과 동일한 이름의 힌트를 Altibase 만 인식할 수 있는 방법을 제공합니다.](#bug-48288-------------------altibase---------------------)
+    + [BUG-48323 aexport 에서 SRID를 지원해야 합니다](#bug-48323-aexport----srid----------)
+    + [BUG-48348 partial CSE 기능 추가](#bug-48348-partial-cse------)
+    + [BUG-48357 iloader out 인자에 -WKB 옵션을 추가합니다.](#bug-48357-iloader-out------wkb----------)
+  * [Fixed Bugs](#fixed-bugs)
+    + [BUG-47870 동일한 디스크 테이블을 가진 이중화 객체 두 개 중 한 개를 삭제하면 이중화가 전송되지 않습니다.](#bug-47870------------------------------------------------------)
+    + [BUG-48090 __OPTIMIZER_VIEW_TARGET_ENABLE = 1 에서 WITH 절과 서브쿼리가 사용된 쿼리 수행 시 결과 오류가 발생할 수 있습니다.](#bug-48090---optimizer-view-target-enable---1----with---------------------------------------)
+    + [BUG-48179 삼중화 이상의 Altibase 이중화 환경에서 이중화 대상 테이블에 TRUNCATE 수행 시 ERR-11041 : A deadlock situation has been detected. 에러가 발생할 수 있습니다.](#bug-48179---------altibase----------------------truncate------err-11041---a-deadlock-situation-has-been-detected---------------)
+    + [BUG-48300 CONNECT BY 절이 포함된 SQL 수행 시 ERR-3111D : There are too many DML statements in the stored procedure, or the SQL query is too long. 에러가 발생할 수 있습니다.](#bug-48300-connect-by--------sql------err-3111d---there-are-too-many-dml-statements-in-the-stored-procedure--or-the-sql-query-is-too-long---------------)
+    + [BUG-48333 세션 타임아웃 조건에서도 세션이 종료되지 않아, 무한대기(HANG) 현상이 발생합니다.](#bug-48333---------------------------------hang-----------)
+    + [BUG-48337 UNION ALL 에서 서로 다른 데이터 타입의 컬럼이 사용된 경우 Altibase 서버가 비정상 종료합니다.](#bug-48337-union-all-----------------------------altibase--------------)
+    + [BUG-48355 AltibaseDatabaseMeta가 생성될 때마다 v$reserved_words를 조회합니다.](#bug-48355-altibasedatabasemeta----------v-reserved-words-------)
+    + [BUG-48360 Altibase.jdbc.driver.cm.CmChannel.sendPacket() 에서 예외가 발생한 경우 통신 버퍼 상태 이상으로 프로토콜이 유실될 수 있습니다.](#bug-48360-altibasejdbcdrivercmcmchannelsendpacket-----------------------------------------------)
+    + [BUG-48370 DB Link 쿼리를 수행하는 세션에서 TRCLOG_DETAIL_PREDICATE = 1 설정 후 원격 테이블 조회 시 Altibase 서버가 비정상 종료할 수 있습니다.](#bug-48370-db-link---------------trclog-detail-predicate---1------------------altibase-------------------)
+    + [BUG-48390 INDEX\_BUILD\_THREAD\_COUNT 프로퍼티의 기본값이 1로 설정되는 문제가 있습니다.](#bug-48390-index--build--thread--count------------1---------------)
+    + [BUG-48393 리눅스에서 ST\_Transfrom 함수를 사용할 수 없는 문제가 있습니다.](#bug-48393-------st--transfrom----------------------)
+  * [Changes](#changes)
+    + [Version Info](#version-info)
+    + [호환성](#---)
+      - [Database binary version](#database-binary-version)
+      - [Meta Version](#meta-version)
+      - [CM protocol Version](#cm-protocol-version)
+      - [Replication protocol Version](#replication-protocol-version)
+      - [Sharding Version](#sharding-version)
+    + [프로퍼티](#----)
+    + [성능 뷰](#----)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 Altibase 7.1.0.4.9 Patch Notes
 ==============================
 
