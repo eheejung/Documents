@@ -6,7 +6,7 @@
   - [New Features](#new-features)
     - [BUG-48369 Disk temp table renewal](#bug-48369disk-temp-table-renewal)
     - [BUG-48409 온라인 로그파일 생성 방식을 개선합니다.](#bug-48409%EC%98%A8%EB%9D%BC%EC%9D%B8-%EB%A1%9C%EA%B7%B8%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1-%EB%B0%A9%EC%8B%9D%EC%9D%84-%EA%B0%9C%EC%84%A0%ED%95%A9%EB%8B%88%EB%8B%A4)
-    - [BUG-48425 altiComp 유틸리티에서 4가지 유형의 비교(DIFF) 결과에 대한 로그 기록 ON/OFF 기능이 추가되었습니다.](#bug-48425alticomp-%EC%9C%A0%ED%8B%B8%EB%A6%AC%ED%8B%B0%EC%97%90%EC%84%9C-4%EA%B0%80%EC%A7%80-%EC%9C%A0%ED%98%95%EC%9D%98-%EB%B9%84%EA%B5%90diff-%EA%B2%B0%EA%B3%BC%EC%97%90-%EB%8C%80%ED%95%9C-%EB%A1%9C%EA%B7%B8-%EA%B8%B0%EB%A1%9D-onoff-%EA%B8%B0%EB%8A%A5%EC%9D%B4-%EC%B6%94%EA%B0%80%EB%90%98%EC%97%88%EC%8A%B5%EB%8B%88%EB%8B%A4)
+    - [BUG-48425 altiComp 유틸리티에서 3가지 유형의 비교(DIFF) 결과에 대한 로그 기록 ON/OFF 기능이 추가되었습니다.](#bug-48425alticomp-%EC%9C%A0%ED%8B%B8%EB%A6%AC%ED%8B%B0%EC%97%90%EC%84%9C-3%EA%B0%80%EC%A7%80-%EC%9C%A0%ED%98%95%EC%9D%98-%EB%B9%84%EA%B5%90diff-%EA%B2%B0%EA%B3%BC%EC%97%90-%EB%8C%80%ED%95%9C-%EB%A1%9C%EA%B7%B8-%EA%B8%B0%EB%A1%9D-onoff-%EA%B8%B0%EB%8A%A5%EC%9D%B4-%EC%B6%94%EA%B0%80%EB%90%98%EC%97%88%EC%8A%B5%EB%8B%88%EB%8B%A4)
   - [Fixed Bugs](#fixed-bugs)
     - [BUG-48327 Semi Join 및 Anti Join 에서 비효율적인 인덱스를 선택하는 경우가 있습니다.](#bug-48327semi-join-%EB%B0%8F-anti-join-%EC%97%90%EC%84%9C-%EB%B9%84%ED%9A%A8%EC%9C%A8%EC%A0%81%EC%9D%B8-%EC%9D%B8%EB%8D%B1%EC%8A%A4%EB%A5%BC-%EC%84%A0%ED%83%9D%ED%95%98%EB%8A%94-%EA%B2%BD%EC%9A%B0%EA%B0%80-%EC%9E%88%EC%8A%B5%EB%8B%88%EB%8B%A4)
     - [BUG-48422 디스크 버퍼에 페이지를 적재하는 과정에서 BCB(Buffer Control Block)와 버퍼 프레임 간 오류 발생 시 Altibase 서버가 비정상 종료합니다.](#bug-48422%EB%94%94%EC%8A%A4%ED%81%AC-%EB%B2%84%ED%8D%BC%EC%97%90-%ED%8E%98%EC%9D%B4%EC%A7%80%EB%A5%BC-%EC%A0%81%EC%9E%AC%ED%95%98%EB%8A%94-%EA%B3%BC%EC%A0%95%EC%97%90%EC%84%9C-bcbbuffer-control-block%EC%99%80-%EB%B2%84%ED%8D%BC-%ED%94%84%EB%A0%88%EC%9E%84-%EA%B0%84-%EC%98%A4%EB%A5%98-%EB%B0%9C%EC%83%9D-%EC%8B%9C-altibase-%EC%84%9C%EB%B2%84%EA%B0%80-%EB%B9%84%EC%A0%95%EC%83%81-%EC%A2%85%EB%A3%8C%ED%95%A9%EB%8B%88%EB%8B%A4)
@@ -60,7 +60,7 @@ New Features
       
       -   V$DISK_TEMP_STAT 성능뷰에 OVER_ALLOC_COUNT, MAX_WORK_AREA_SIZE, RUNTIME_MAP_SIZE 컬럼이 추가 되었습니다.
   - Property
-    -   속성 이름 : [**HASH\_AREA\_SIZE**]([Documents/GeneralReference_1.md at master · ALTIBASE/Documents (github.com)](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/GeneralReference_1.md#hash_area_size-단위-바이트))
+    -   속성 이름 : **[HASH\_AREA\_SIZE](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/GeneralReference_1.md#hash_area_size-단위-바이트)**
         -   최소값, 최대값 : [512K, 2^64-1]  -\> [3M, 2^64-1]
         -   변경/추가/삭제 : 최소값 변경
         
@@ -68,7 +68,7 @@ New Features
         
          -   변경/추가/삭제 : 삭제
         
-     -   속성 이름 : [**TOTAL\_WA\_SIZE**]([Documents/GeneralReference_1.md at master · ALTIBASE/Documents (github.com)](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/GeneralReference_1.md#total_wa_size-단위-바이트))
+     -   속성 이름 : **[TOTAL\_WA\_SIZE](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/GeneralReference_1.md#total_wa_size-단위-바이트)**
           - 속성 설명 :
          정렬 또는 해싱 작업을 위해 할당할 수 있는 메모리의 최대
          크기를 지정한다.  Altibase 운영 중 ALTER SYSTEM 문을 이용하여 이 프로퍼티의
@@ -76,7 +76,7 @@ New Features
          설명은 TEMP\_MAX\_PAGE\_COUNT 프로퍼티 설명을 참고하도록 한다.~~
           - 변경/추가/삭제 : 속성 설명 변경
          
-     - 속성 이름 : [**INIT\_TOTAL\_WA\_SIZE**]([Documents/GeneralReference_1.md at master · ALTIBASE/Documents (github.com)](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/GeneralReference_1.md#init_total_wa_size-단위-바이트))
+     - 속성 이름 : **[INIT\_TOTAL\_WA\_SIZE](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/GeneralReference_1.md#init_total_wa_size-단위-바이트)**
 
         - 속성 설명 : 정렬 또는 해싱 작업을 위해 미리 할당 할 메모리의 크기를 지정한다.
 
@@ -153,7 +153,7 @@ New Features
 
   예를 들어, DF\_MOSO 유형의 결과를 실행 결과 파일에 기록하지 않으려면 LOG\_DF\_MOSO = OFF 로 설정합니다.
 
-  보다 자세한 내용은 Utilities 매뉴얼을 참고하세요. [Altibase 7.1 Utilities Manual]([Documents/Utilities.md at master · ALTIBASE/Documents (github.com)](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/Utilities.md#log_mxso))
+  보다 자세한 내용은 Utilities 매뉴얼을 참고하세요. [Altibase 7.1 Utilities Manual](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/Utilities.md#diff-log-옵션)
 
 -   **재현 방법**
 
@@ -171,9 +171,9 @@ New Features
 
   - Property
     -   altComp.cfg 파일에 프로퍼티 추가되었습니다.
-        -   [LOG\_DF\_MOSO]([Documents/Utilities.md at master · ALTIBASE/Documents (github.com)](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/Utilities.md#log_df_moso))
-        -   [LOG\_MOSX]([Documents/Utilities.md at master · ALTIBASE/Documents (github.com)](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/Utilities.md#log_mosx))
-        -   [LOG\_MXSO]([Documents/Utilities.md at master · ALTIBASE/Documents (github.com)](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/Utilities.md#log_mxso))
+        -   [LOG\_DF\_MOSO](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/Utilities.md#log_df_moso)
+        -   [LOG\_MOSX](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/Utilities.md#log_mosx)
+        -   [LOG\_MXSO](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/Utilities.md#log_mxso)
 
   - Compile Option
 
