@@ -147,7 +147,6 @@ New Features
 
 - **증상** : 비교(DIFF) 기능에서 4가지 유형의 레코드 비교 결과를 실행 결과 파일에 기록할 것인지 설정하는 프로퍼티가 추가되었습니다.
 
-  -   LOG\_EQ\_MOSO
   -   LOG\_DF\_MOSO
   -   LOG\_MOSX
   -   LOG\_MXSO
@@ -173,7 +172,6 @@ New Features
   - Property
     - altiComp 프로퍼티가 추가되었습니다. 
 
-      -   LOG\_EQ\_MOSO
       -   LOG\_DF\_MOSO
       -   LOG\_MOSX
       -   LOG\_MXSO
