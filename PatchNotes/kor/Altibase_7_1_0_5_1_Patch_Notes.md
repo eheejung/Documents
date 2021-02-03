@@ -1,6 +1,4 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
 
 - [Altibase 7.1.0.5.1 Patch Notes](#altibase-71051-patch-notes)
   - [New Features](#new-features)
@@ -17,7 +15,7 @@
     - [프로퍼티](#%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0)
     - [성능 뷰](#%EC%84%B1%EB%8A%A5-%EB%B7%B0)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 
 
 
