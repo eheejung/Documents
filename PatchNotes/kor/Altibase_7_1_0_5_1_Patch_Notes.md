@@ -379,13 +379,13 @@ Replication 프로토콜 버전은 변경되지 않았다..
 
 #### 추가된 프로퍼티
 
-- INIT\_TOTAL\_WA\_SIZE
+- [INIT\_TOTAL\_WA\_SIZE](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/GeneralReference_1.md#init_total_wa_size-단위-바이트)
 - __USE_TEMP_FOR_PREPARE_LOGFILE
 
 #### 변경된 프로퍼티
 
-- HASH\_AREA\_SIZE
-- TOTAL\_WA\_SIZE
+- [HASH\_AREA\_SIZE](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/GeneralReference_1.md#hash_area_size-단위-바이트)
+- [TOTAL\_WA\_SIZE](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/GeneralReference_1.md#total_wa_size-단위-바이트)
 - __OPTIMIZER_INDEX_NL_JOIN_ACCESS_METHOD_POLICY
 
 #### 삭제된 프로퍼티
