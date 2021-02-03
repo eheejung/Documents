@@ -395,6 +395,6 @@ Replication 프로토콜 버전은 변경되지 않았다..
 
 #### 변경된 성능 뷰
 
-- V$DISK_TEMP_STAT
+- [V$DISK_TEMP_STAT](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/GeneralReference_3.md#vdisk_temp_stat)
 
 #### 삭제된 성능 뷰
