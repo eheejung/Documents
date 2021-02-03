@@ -57,27 +57,36 @@ New Features
 - **변경사항**
 
   -   Performance view
+      
       -   V$DISK_TEMP_STAT 성능뷰에 OVER_ALLOC_COUNT, MAX_WORK_AREA_SIZE, RUNTIME_MAP_SIZE 컬럼이 추가 되었습니다.
-  -   Property
-      -   속성 이름 : **HASH\_AREA\_SIZE**
-          -   최소값, 최대값 : [512K, 2^64-1]  -\> [3M, 2^64-1]
-          -   변경/추가/삭제 : 최소값 변경
-      -   속성 이름 : **TEMP\_MAX\_PAGE\_COUNT**
-           -   변경/추가/삭제 : 삭제
-       -   속성 이름 : **TOTAL\_WA\_SIZE**
-            - 속성 설명 :
-           정렬 또는 해싱 작업을 위해 할당할 수 있는 메모리의 최대
-           크기를 지정한다.  Altibase 운영 중 ALTER SYSTEM 문을 이용하여 이 프로퍼티의
-           값을 변경할 수 있다. ~~단, 변경 요청에 대한 응답은 바로 반환되지만, 변경된 값이 실제로 서버에 적용 되는 시점은 사용 중인 임시 테이블이 없을 때까지 지연된다. 임시 테이블에 대한
-           설명은 TEMP\_MAX\_PAGE\_COUNT 프로퍼티 설명을 참고하도록 한다.~~
-            - 변경/추가/삭제 : 속성 설명 변경
-       -   속성 이름 : **INIT\_TOTAL\_WA\_SIZE**
-         - 속성 설명 : 정렬 또는 해싱 작업을 위해 미리 할당 할 메모리의 크기를 지정한다.
+  - Property
+    -   속성 이름 : **HASH\_AREA\_SIZE**
+        -   최소값, 최대값 : [512K, 2^64-1]  -\> [3M, 2^64-1]
+        -   변경/추가/삭제 : 최소값 변경
+        
+    -   속성 이름 : **TEMP\_MAX\_PAGE\_COUNT**
+        
+         -   변경/추가/삭제 : 삭제
+        
+     -   속성 이름 : **TOTAL\_WA\_SIZE**
+          - 속성 설명 :
+         정렬 또는 해싱 작업을 위해 할당할 수 있는 메모리의 최대
+         크기를 지정한다.  Altibase 운영 중 ALTER SYSTEM 문을 이용하여 이 프로퍼티의
+         값을 변경할 수 있다. ~~단, 변경 요청에 대한 응답은 바로 반환되지만, 변경된 값이 실제로 서버에 적용 되는 시점은 사용 중인 임시 테이블이 없을 때까지 지연된다. 임시 테이블에 대한
+         설명은 TEMP\_MAX\_PAGE\_COUNT 프로퍼티 설명을 참고하도록 한다.~~
+          - 변경/추가/삭제 : 속성 설명 변경
+         
+     - 속성 이름 : **INIT\_TOTAL\_WA\_SIZE**
+
+        - 속성 설명 : 정렬 또는 해싱 작업을 위해 미리 할당 할 메모리의 크기를 지정한다.
+
           TOTAL\_WA\_SIZE  보다 더 클 경우  TOTAL\_WA\_SIZE 까지만 생성한다.
+
           Altibase 운영 중 ALTER SYSTEM 문을 이용하여 이 프로퍼티의 값을 변경할 수 있다.
-         - 변경/추가/삭제 : 추가
-         - 공개/비공개 : 공개
-         - 최소값, 최대값, 기본값 : 0, 2^64-1, 2^64-1
+
+       - 변경/추가/삭제 : 추가
+       - 공개/비공개 : 공개
+       - 최소값, 최대값, 기본값 : 0, 2^64-1, 2^64-1
 
   -   Compile Option
   -   Error Code
@@ -92,10 +101,10 @@ New Features
 
 -   **증상** : 온라인 로그파일 생성 오류로 불완전한 온라인 로그파일이 생성되는 것을 방지하기 위해 온라인 로그파일 생성 방식을 개선합니다. 
     
-    1) logfile.tmp 이름의 임시 파일 생성
-    2) 파일 초기화 및 LOG\_FILE\_SIZE 크기만큼 확장
-    3) 임시 파일을 logfile.*\#* 으로 변경
-        
+    1. logfile.tmp 이름의 임시 파일 생성
+    2. 파일 초기화 및 LOG\_FILE\_SIZE 크기만큼 확장
+    3. 임시 파일을 logfile.*\#* 으로 변경
+           
 
 -   **재현 방법**
 
@@ -136,21 +145,16 @@ New Features
 
 -   **재현 빈도** : Always
 
--   **증상** : 비교(DIFF) 기능에서 4가지 유형의 레코드 비교 결과를 실행 결과 파일에 기록할 것인지 설정하는 프로퍼티가 추가되었습니다.
-    
-    - LOG\_EQ\_MOSO
-      
-    - LOG\_DF\_MOSO
-      
-    - LOG\_MOSX
-      
-    -   LOG\_MXSO
+- **증상** : 비교(DIFF) 기능에서 4가지 유형의 레코드 비교 결과를 실행 결과 파일에 기록할 것인지 설정하는 프로퍼티가 추가되었습니다.
 
-예를 들어, DF\_MOSO 유형의 결과를 실행 결과 파일에 기록하지 않으려면 LOG\_DF\_MOSO = OFF 로 설정합니다.
+  -   LOG\_EQ\_MOSO
+  -   LOG\_DF\_MOSO
+  -   LOG\_MOSX
+  -   LOG\_MXSO
 
-보다 자세한 내용은 Utilities 매뉴얼을 참고하세요.
+  예를 들어, DF\_MOSO 유형의 결과를 실행 결과 파일에 기록하지 않으려면 LOG\_DF\_MOSO = OFF 로 설정합니다.
 
-[Documents/Utilities.md at master · ALTIBASE/Documents (github.com)](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/Utilities.md#alticomp-사용-방법)    
+  보다 자세한 내용은 Utilities 매뉴얼을 참고하세요. [Documents/Utilities.md at master · ALTIBASE/Documents (github.com)](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/Utilities.md#alticomp-사용-방법)    
 
 -   **재현 방법**
 
@@ -166,18 +170,17 @@ New Features
 
   - Performance view
 
-  -   Property
-      -   altiComp 프로퍼티가 추가되었습니다. 
+  - Property
+    -   altiComp 프로퍼티가 추가되었습니다. 
+        -   LOG\_EQ\_MOSO
+        -   LOG\_DF\_MOSO
+        -   LOG\_MOSX
+        -   LOG\_MXSO
 
-          - LOG\_EQ\_MOSO
-           - LOG\_DF\_MOSO
-             - LOG\_MOSX
-             - LOG\_MXSO
-      
   - Compile Option
-  
+
   - Error Code
-  
+
   
 
 Fixed Bugs
@@ -265,15 +268,15 @@ Fixed Bugs
   - Property
 
       -   __OPTIMIZER_INDEX_NL_JOIN_ACCESS_METHOD_POLICY
-      -   속성 설명 : 조인 최적화 과정에서 인덱스 선택 기준 설정 
-      -   변경/추가/삭제 : 설정 값 2가 추가되었습니다. 
-      -   공개/비공개 : 비공개
-      -   최소값, 최대값, 기본값 : 0, 2, 0
+          -   속성 설명 : 조인 최적화 과정에서 인덱스 선택 기준 설정 
+          -   변경/추가/삭제 : 설정 값 2가 추가되었습니다. 
+          -   공개/비공개 : 비공개
+          -   최소값, 최대값, 기본값 : 0, 2, 0
+      
+  - Compile Option
+    
+  - Error Code
 
-- Compile Option
-  
-- Error Code
-  
     
 
 ### BUG-48422 디스크 버퍼에 페이지를 적재하는 과정에서 BCB(Buffer Control Block)와 버퍼 프레임 간 오류 발생 시 Altibase 서버가 비정상 종료합니다.
