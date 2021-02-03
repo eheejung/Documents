@@ -154,7 +154,7 @@ New Features
 
   예를 들어, DF\_MOSO 유형의 결과를 실행 결과 파일에 기록하지 않으려면 LOG\_DF\_MOSO = OFF 로 설정합니다.
 
-  보다 자세한 내용은 Utilities 매뉴얼을 참고하세요. [Documents/Utilities.md at master · ALTIBASE/Documents (github.com)](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/Utilities.md#alticomp-사용-방법)    
+  보다 자세한 내용은 Utilities 매뉴얼을 참고하세요. [Altibase 7.1 Utilities Manual](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/Utilities.md#alticomp-사용-방법)    
 
 -   **재현 방법**
 
@@ -171,11 +171,14 @@ New Features
   - Performance view
 
   - Property
-    -   altiComp 프로퍼티가 추가되었습니다. 
-        -   LOG\_EQ\_MOSO
-        -   LOG\_DF\_MOSO
-        -   LOG\_MOSX
-        -   LOG\_MXSO
+    - altiComp 프로퍼티가 추가되었습니다. 
+
+      -   LOG\_EQ\_MOSO
+      -   LOG\_DF\_MOSO
+      -   LOG\_MOSX
+      -   LOG\_MXSO
+
+      [Altibase 7.1 Utilities Manual](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/Utilities.md#alticomp-사용-방법) 을 참고하세요. 
 
   - Compile Option
 
