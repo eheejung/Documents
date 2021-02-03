@@ -19,21 +19,6 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-- [Altibase 7.1.0.5.1 Patch Notes](#altibase-71051-patch-notes)
-  - [New Features](#new-features)
-    - [BUG-48369 Disk temp table renewal](#bug-48369 disk-temp-table-renewal)
-    - [BUG-48409 온라인 로그파일 생성 방식을 개선합니다.](#bug-48409 %EC%98%A8%EB%9D%BC%EC%9D%B8-%EB%A1%9C%EA%B7%B8%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1-%EB%B0%A9%EC%8B%9D%EC%9D%84-%EA%B0%9C%EC%84%A0%ED%95%A9%EB%8B%88%EB%8B%A4)
-    - [BUG-48425 altiComp 유틸리티에서 4가지 유형의 비교(DIFF) 결과에 대한 로그 기록 ON/OFF 기능이 추가되었습니다.](#bug-48425 alticomp-%EC%9C%A0%ED%8B%B8%EB%A6%AC%ED%8B%B0%EC%97%90%EC%84%9C-4%EA%B0%80%EC%A7%80-%EC%9C%A0%ED%98%95%EC%9D%98-%EB%B9%84%EA%B5%90diff-%EA%B2%B0%EA%B3%BC%EC%97%90-%EB%8C%80%ED%95%9C-%EB%A1%9C%EA%B7%B8-%EA%B8%B0%EB%A1%9D-onoff-%EA%B8%B0%EB%8A%A5%EC%9D%B4-%EC%B6%94%EA%B0%80%EB%90%98%EC%97%88%EC%8A%B5%EB%8B%88%EB%8B%A4)
-  - [Fixed Bugs](#fixed-bugs)
-    - [BUG-48327 Semi Join 및 Anti Join 에서 비효율적인 인덱스를 선택하는 경우가 있습니다.](#bug-48327 semi-join-%EB%B0%8F-anti-join-%EC%97%90%EC%84%9C-%EB%B9%84%ED%9A%A8%EC%9C%A8%EC%A0%81%EC%9D%B8-%EC%9D%B8%EB%8D%B1%EC%8A%A4%EB%A5%BC-%EC%84%A0%ED%83%9D%ED%95%98%EB%8A%94-%EA%B2%BD%EC%9A%B0%EA%B0%80-%EC%9E%88%EC%8A%B5%EB%8B%88%EB%8B%A4)
-    - [BUG-48422 디스크 버퍼에 페이지를 적재하는 과정에서 BCB(Buffer Control Block)와 버퍼 프레임 간 오류 발생 시 Altibase 서버가 비정상 종료합니다.](#bug-48422 %EB%94%94%EC%8A%A4%ED%81%AC-%EB%B2%84%ED%8D%BC%EC%97%90-%ED%8E%98%EC%9D%B4%EC%A7%80%EB%A5%BC-%EC%A0%81%EC%9E%AC%ED%95%98%EB%8A%94-%EA%B3%BC%EC%A0%95%EC%97%90%EC%84%9C-bcbbuffer-control-block%EC%99%80-%EB%B2%84%ED%8D%BC-%ED%94%84%EB%A0%88%EC%9E%84-%EA%B0%84-%EC%98%A4%EB%A5%98-%EB%B0%9C%EC%83%9D-%EC%8B%9C-altibase-%EC%84%9C%EB%B2%84%EA%B0%80-%EB%B9%84%EC%A0%95%EC%83%81-%EC%A2%85%EB%A3%8C%ED%95%A9%EB%8B%88%EB%8B%A4)
-    - [BUG-48477 disk hash temp 재사용을 위한 초기화 과정에서 Altibase 서버가 비정상 종료할 수 있습니다.](#bug-48477 disk-hash-temp-%EC%9E%AC%EC%82%AC%EC%9A%A9%EC%9D%84-%EC%9C%84%ED%95%9C-%EC%B4%88%EA%B8%B0%ED%99%94-%EA%B3%BC%EC%A0%95%EC%97%90%EC%84%9C-altibase-%EC%84%9C%EB%B2%84%EA%B0%80-%EB%B9%84%EC%A0%95%EC%83%81-%EC%A2%85%EB%A3%8C%ED%95%A0-%EC%88%98-%EC%9E%88%EC%8A%B5%EB%8B%88%EB%8B%A4)
-  - [Changes](#changes)
-    - [Version Info](#version-info)
-    - [호환성](#%ED%98%B8%ED%99%98%EC%84%B1)
-    - [프로퍼티](#%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0)
-    - [성능 뷰](#%EC%84%B1%EB%8A%A5-%EB%B7%B0)
-
 
 
 Altibase 7.1.0.5.1 Patch Notes
@@ -50,25 +35,23 @@ New Features
 
 -   **재현 빈도** : Always
 
--   **증상** : Disk temp table renewal 반영으로 Disk hash temp table 동작이 변경되었습니다.
+-   **증상** : Disk temp table renewal 반영으로 Disk hash temp table 동작이 변경되었습니다. 
     
-
-ORDER BY 절을 사용하지 않은 SELECT 결과 순서가 바뀔 수 있습니다.
+    ORDER BY 절을 사용하지 않은 SELECT 결과 순서가 바뀔 수 있습니다.
     
-Disk temp table을 사용하는 SQL 성능이 향상됩니다.
+    Disk temp table을 사용하는 SQL 성능이 향상됩니다.
     
-Disk temp table을 사용하는 SQL 수행 시 이전보다 메모리를 적게 사용합니다.
+    Disk temp table을 사용하는 SQL 수행 시 이전보다 메모리를 적게 사용합니다.
     
-    TEMP\_MAX\_PAGE\_COUNT 프로퍼티 삭제로 TEMP\_MAX\_PAGE\_COUNT의 제약을 받지 않고 디스크 임시 테이블스페이스 전체를 활용할 수 있습니다.
+    TEMP\_MAX\_PAGE\_COUNT 프로퍼티 삭제로 TEMP\_MAX\_PAGE\_COUNT의 제약을 받지 않고 디스크 임시 테이블스페이스 전체를 활용할 수 있습니다.    
 
 -   **재현 방법**
-
-    -   **재현 절차**
-
-    -   **수행 결과**
-
-    -   **예상 결과**
-
+-   **재현 절차**
+    
+-   **수행 결과**
+    
+-   **예상 결과**
+    
 -   **Workaround**
 
 - **변경사항**
@@ -109,13 +92,11 @@ Disk temp table을 사용하는 SQL 수행 시 이전보다 메모리를 적게 
 
 -   **증상** : 온라인 로그파일 생성 오류로 불완전한 온라인 로그파일이 생성되는 것을 방지하기 위해 온라인 로그파일 생성 방식을 개선합니다. 
     
+    1) logfile.tmp 이름의 임시 파일 생성
+    2) 파일 초기화 및 LOG\_FILE\_SIZE 크기만큼 확장
+    3) 임시 파일을 logfile.*\#* 으로 변경
+        
 
-1) logfile.tmp 이름의 임시 파일 생성
-    
-2) 파일 초기화 및 LOG\_FILE\_SIZE 크기만큼 확장
-    
-3) 임시 파일을 logfile.*\#* 으로 변경
-    
 -   **재현 방법**
 
     -   **재현 절차**
@@ -157,20 +138,19 @@ Disk temp table을 사용하는 SQL 수행 시 이전보다 메모리를 적게 
 
 -   **증상** : 비교(DIFF) 기능에서 4가지 유형의 레코드 비교 결과를 실행 결과 파일에 기록할 것인지 설정하는 프로퍼티가 추가되었습니다.
     
-- LOG\_EQ\_MOSO
-  
-- LOG\_DF\_MOSO
-  
-- LOG\_MOSX
-  
-- LOG\_MXSO
-  
+    - LOG\_EQ\_MOSO
+      
+    - LOG\_DF\_MOSO
+      
+    - LOG\_MOSX
+      
+    -   LOG\_MXSO
 
 예를 들어, DF\_MOSO 유형의 결과를 실행 결과 파일에 기록하지 않으려면 LOG\_DF\_MOSO = OFF 로 설정합니다.
-    
-    보다 자세한 내용은 Utilities 매뉴얼을 참고하세요.
-    
-    [Documents/Utilities.md at master · ALTIBASE/Documents (github.com)](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/Utilities.md#alticomp-사용-방법)
+
+보다 자세한 내용은 Utilities 매뉴얼을 참고하세요.
+
+[Documents/Utilities.md at master · ALTIBASE/Documents (github.com)](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/Utilities.md#alticomp-사용-방법)    
 
 -   **재현 방법**
 
@@ -190,13 +170,13 @@ Disk temp table을 사용하는 SQL 수행 시 이전보다 메모리를 적게 
       -   altiComp 프로퍼티가 추가되었습니다. 
 
           - LOG\_EQ\_MOSO
-   - LOG\_DF\_MOSO
-           - LOG\_MOSX
-           - LOG\_MXSO
-        
+           - LOG\_DF\_MOSO
+             - LOG\_MOSX
+             - LOG\_MXSO
+      
   - Compile Option
   
-- Error Code
+  - Error Code
   
   
 
@@ -282,15 +262,14 @@ Fixed Bugs
 - **변경사항**
 
   - Performance view
+  - Property
 
-  -   Property
-      
       -   __OPTIMIZER_INDEX_NL_JOIN_ACCESS_METHOD_POLICY
-  - 속성 설명 : 조인 최적화 과정에서 인덱스 선택 기준 설정 
-          - 변경/추가/삭제 : 설정 값 2가 추가되었습니다. 
-  - 공개/비공개 : 비공개
-          - 최소값, 최대값, 기본값 : 0, 2, 0
-  
+      -   속성 설명 : 조인 최적화 과정에서 인덱스 선택 기준 설정 
+      -   변경/추가/삭제 : 설정 값 2가 추가되었습니다. 
+      -   공개/비공개 : 비공개
+      -   최소값, 최대값, 기본값 : 0, 2, 0
+
 - Compile Option
   
 - Error Code
