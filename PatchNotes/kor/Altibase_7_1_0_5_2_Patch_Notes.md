@@ -38,7 +38,7 @@ New Features
     
 -   **예상 결과**
 -   **Workaround**
-- **변경사항**
+-   **변경사항**
 
   - Performance view
 
@@ -47,13 +47,13 @@ New Features
     - JDBC 연결속성 추가
        * reuse_resultset
        * 설명 : [JDBC 매뉴얼](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/JDBC.md#reuse_resultset)
-     * 값 
+       * 값 
            * false : ResultSet 재사용 안 함 (기본값)
            * true  : ResultSet 재사용
-    
-- Compile Option
-  
-- Error Code
+
+  - Compile Option
+
+  - Error Code
 
 ### BUG-48510 메모리 테이블 INDEX SCAN, FULL SCAN 성능을 개선합니다.
 
