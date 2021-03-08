@@ -3,7 +3,6 @@
 
 - [Altibase 7.1.0.5.2 Patch Notes](#altibase-71052-patch-notes)
   - [New Features](#new-features)
-    - [BUG-48357 iloader out 인자에 -geom WKB 옵션을 추가합니다.](#bug-48357iloader-out-%EC%9D%B8%EC%9E%90%EC%97%90--geom-wkb-%EC%98%B5%EC%85%98%EC%9D%84-%EC%B6%94%EA%B0%80%ED%95%A9%EB%8B%88%EB%8B%A4)
     - [BUG-48380 newJDBC fetch 성능을 개선합니다.](#bug-48380newjdbc-fetch-%EC%84%B1%EB%8A%A5%EC%9D%84-%EA%B0%9C%EC%84%A0%ED%95%A9%EB%8B%88%EB%8B%A4)
     - [BUG-48510 메모리 테이블 INDEX SCAN, FULL SCAN 성능을 개선합니다.](#bug-48510%EB%A9%94%EB%AA%A8%EB%A6%AC-%ED%85%8C%EC%9D%B4%EB%B8%94-index-scan-full-scan-%EC%84%B1%EB%8A%A5%EC%9D%84-%EA%B0%9C%EC%84%A0%ED%95%A9%EB%8B%88%EB%8B%A4)
   - [Fixed Bugs](#fixed-bugs)
@@ -25,71 +24,36 @@ Altibase 7.1.0.5.2 Patch Notes
 New Features
 ------------
 
-### BUG-48357 iloader out 인자에 -geom WKB 옵션을 추가합니다.
+### BUG-48380 newJDBC fetch 성능을 개선합니다.
 
--   **module** : ux-iloader
-
+-   **module** : mm-jdbc
 -   **Category** : Enhancement
-
 -   **재현 빈도** : Always
-
--   **증상** : iloader out 인자에 -geom WKB 옵션을 추가합니다. 이 옵션으로 Altibase 7.1.0.4.0 이상에서 제공하는 EWKB(Extended Well-Known Binary) 형식의 공간 데이터를 WKB(Well-Known Binary) 형식으로 다운로드할 수 있습니다.
-    
+-   **증상** : newJDBC fetch 성능 향상을 위해 ResultSet 객체 사용 방식을 개선합니다. 
+    이 기능을 이용하기 위해서 반드시 JDBC 드라이버를 패치하고 연결 속성 reuse_resultset=true 를 추가해야 합니다. 
 -   **재현 방법**
 -   **재현 절차**
     
 -   **수행 결과**
     
 -   **예상 결과**
-    
 -   **Workaround**
-
--   **변경사항**
-
-    -   Performance view
-    -   Property
-    -   Compile Option
-    -   Error Code
-
-### BUG-48380 newJDBC fetch 성능을 개선합니다.
-
--   **module** : mm-jdbc
-
--   **Category** : Enhancement
-
--   **재현 빈도** : Always
-
--   **증상** : newJDBC fetch 성능 향상을 위해 ResultSet 객체 사용 방식을 개선합니다.
-    
--   **재현 방법**
-
-    -   **재현 절차**
-
-    -   **수행 결과**
-
-    -   **예상 결과**
-
--   **Workaround**
-
 - **변경사항**
 
   - Performance view
 
   - Property
 
-    - reuse\_resultset
-    - 속성 설명 : 하나의 PreparedStatement 객체에서 생성되는 ResultSet 객체 재사용 여부 설정
-    - 변경/추가/삭제 : JDBC 연결 속성 추가
+    - JDBC 연결속성 추가
+       * reuse_resultset
+       * 설명 : [JDBC 매뉴얼](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/JDBC.md#reuse_resultset)
+     * 값 
+           * false : ResultSet 재사용 안 함 (기본값)
+           * true  : ResultSet 재사용
+    
+- Compile Option
   
-    - 공개/비공개 : 공개
-  
-    - 값의 범위 : false(기본값), true
-  
-    보다 자세한 내용은 [JDBC 매뉴얼](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase\_7.1/kor/JDBC.md\#reuse\_resultset)을 참고하세요.
-  
-  - Compile Option
-
-  - Error Code
+- Error Code
 
 ### BUG-48510 메모리 테이블 INDEX SCAN, FULL SCAN 성능을 개선합니다.
 
@@ -184,16 +148,15 @@ Fixed Bugs
 
 -   **재현 빈도** : Rare
 
--   **증상** : 세션 종료 시 statement 객체가 정리되지 않은 경우 Altibase 서버가 비정상 종료하는 현상을 개선합니다.
+-   **증상** : 세션 종료 시 statement 객체가 정리되지 않은 경우 Altibase 서버가 비정상하는 문제를 수정합니다.
     
 -   **재현 방법**
-
-    -   **재현 절차**
-
-    -   **수행 결과**
-
-    -   **예상 결과**
-
+-   **재현 절차**
+    
+-   **수행 결과**
+    
+-   **예상 결과**
+    
 -   **Workaround**
 
 -   **변경사항**
