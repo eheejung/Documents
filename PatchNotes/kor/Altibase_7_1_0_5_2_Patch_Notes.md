@@ -78,15 +78,15 @@ New Features
   - Property
 
     - reuse\_resultset
-  - 속성 설명 : 하나의 PreparedStatement 객체에서 생성되는 ResultSet 객체 재사용 여부 설정
-      - 변경/추가/삭제 : JDBC 연결 속성 추가
-
-      - 공개/비공개 : 공개
-
-      - 값의 범위 : false(기본값), true
-
-      보다 자세한 내용은 [JDBC 매뉴얼](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase\_7.1/kor/JDBC.md\#reuse\_resultset)을 참고하세요.
-
+    - 속성 설명 : 하나의 PreparedStatement 객체에서 생성되는 ResultSet 객체 재사용 여부 설정
+    - 변경/추가/삭제 : JDBC 연결 속성 추가
+  
+    - 공개/비공개 : 공개
+  
+    - 값의 범위 : false(기본값), true
+  
+    보다 자세한 내용은 [JDBC 매뉴얼](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase\_7.1/kor/JDBC.md\#reuse\_resultset)을 참고하세요.
+  
   - Compile Option
 
   - Error Code
