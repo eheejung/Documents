@@ -74,9 +74,9 @@
 | **Linux on Power**                                           |                     |                           |                                                              |
 | POWER7 Red Hat Enterprise Linux 6.5 이상<br/>POWER7 Red Hat Enterprise Linux 7.0 이상<br />POWER8 Red Hat Enterprise Linux 6.5 이상<br/>POWER8 Red Hat Enterprise Linux 7.0 이상 |          ●          |             ●             | - GNU glibc 2.12 이상                                        |
 | **Linux on Power** **(Little Endian)**                       |                     |                           |                                                              |
-| POWER8(LE) Red Hat Enterprise Linux 7.2 이상                 |          ●          |             ●             | - GNU glibc 2.12 이상<br />- Altibase 7.1.0.0.8 이상<br />- altimon 은 Altibase 7.1.0.3.6 이상 지원<br />- jdbcAdapter 는 Altibase 7.1.0.3.6 이상 지원 |
+| POWER8(LE) Red Hat Enterprise Linux 7.2 이상                 |          ●          |             ●             | - GNU glibc 2.17 이상<br />- Altibase 7.1.0.0.8 이상<br />- altimon : Altibase 7.1.0.3.6 이상 지원<br />- jdbcAdapter : Altibase 7.1.0.3.6 이상 지원<br /> |
 | **Microsoft Windows (x64)**                                  |                     |                           |                                                              |
-| Microsoft Windows 2008                                       |       미지원        |             ●             | - Altibase 클라이언트 7.1.0.4.5 이상                         |
+| Microsoft Windows 2008                                       |        **X**        |             ●             | - Altibase 클라이언트 7.1.0.4.5 이상                         |
 
 |
 
