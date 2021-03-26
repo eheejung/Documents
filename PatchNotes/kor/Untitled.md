@@ -1,4 +1,74 @@
-# Altibase 6.5.1
+**Table of Contents**  
+
+- [Altibase 버전 별 지원 플랫폼](#altibase-%EB%B2%84%EC%A0%84-%EB%B3%84-%EC%A7%80%EC%9B%90-%ED%94%8C%EB%9E%AB%ED%8F%BC)
+  - [Altibase 7.1](#altibase-71)
+    - [Altibase 7.1 Java 호환성](#altibase-71-java-%ED%98%B8%ED%99%98%EC%84%B1)
+      - [Oracle JDK / IBM Java](#oracle-jdk--ibm-java)
+      - [OpenJDK](#openjdk)
+  - [Altibase 6.5.1](#altibase-651)
+    - [Altibase 6.5.1 Java 호환성](#altibase-651-java-%ED%98%B8%ED%99%98%EC%84%B1)
+      - [Oracle JDK / IBM Java](#oracle-jdk--ibm-java-1)
+      - [OpenJDK](#openjdk-1)
+
+
+
+# Altibase 버전 별 지원 플랫폼
+
+
+
+## Altibase 7.1
+
+[Altibase 7.1 지원 플랫폼](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/Installation.md#지원-플랫폼)
+
+ 
+
+
+|                                                              | Altibase 서버<br /> | Altibase 클라이언트<br /> | 소프트웨어 요구사항                                          |
+| ------------------------------------------------------------ | :-----------------: | :-----------------------: | :----------------------------------------------------------- |
+| **AIX**                                                      |                     |                           |                                                              |
+| AIX 6.1 TL3 <br />AIX 6.1 TL9<br />AIX 7.1<br />AIX 7.2      |          ●          |             ●             |                                                              |
+| **HP-UX Itanium (IA-64)**                                    |                     |                           |                                                              |
+| HP-UX 11.31 이상                                             |          ●          |             ●             |                                                              |
+| **Linux x86-64**                                             |                     |                           |                                                              |
+| Red Hat Enterprise Linux 6<br/>Red Hat Enterprise Linux 7<br/>Red Hat Enterprise Linux 8 |          ●          |             ●             | - GNU glibc 2.12 이상                                        |
+| **Linux on Power**                                           |                     |                           |                                                              |
+| POWER7 Red Hat Enterprise Linux 6<br/>POWER7 Red Hat Enterprise Linux 7<br />POWER8 Red Hat Enterprise Linux 6<br/>POWER8 Red Hat Enterprise Linux 7 |          ●          |             ●             | *- GNU glibc 2.12 이상*                                      |
+| **Linux on Power** **(Little Endian)**                       |                     |                           |                                                              |
+| POWER8(LE) Red Hat Enterprise Linux 7                        |          ●          |             ●             | - GNU glibc 2.17 이상<br />- Altibase 7.1.0.0.8 이상<br />- altimon : Altibase 7.1.0.3.6 이상 지원<br />- jdbcAdapter : Altibase 7.1.0.3.6 이상 지원<br /> |
+| **Microsoft Windows (x64)**                                  |                     |                           |                                                              |
+| Microsoft Windows 2008                                       |        **X**        |             ●             | - Altibase 클라이언트 7.1.0.4.5 이상                         |
+
+
+
+### Altibase 7.1 Java 호환성
+
+#### Oracle JDK / IBM Java
+
+|                      | JDK 4 | JDK 5 | JDK 6 | JDK 7 |
+| :------------------- | :---: | :---: | :---: | :---: |
+| **JDBC Driver**      |   ●   |   ●   |       |       |
+| **DB Link**          |   ●   |   ●   |       |       |
+| **Adapter for JDBC** | **X** | **X** | **X** |   ●   |
+| **altiMon**          | **X** |   ●   |       |       |
+
+#### OpenJDK
+
+> *Altibase 7.1.0.2.6 이상에서 호환성 보장*
+
+|                      | JDK 11 | JDK 12 |
+| :------------------- | :----: | :----: |
+| **JDBC Driver**      |   ●    |   ●    |
+| **DB Link**          |   ●    |   ●    |
+| **Adapter for JDBC** |   ●    |   ●    |
+| **altiMon**          |   ●    |   ●    |
+
+
+
+
+
+## Altibase 6.5.1
+
+> Altibase 서버는 64비트만 지원합니다.
 
 
 |                           | Altibase 서버<br /> | Altibase 클라이언트<br />32비트 | Altibase 클라이언트<br />64비트 | 소프트웨어 요구사항 |
@@ -8,34 +78,38 @@
 | **HP-UX Itanium (IA-64)** |                     |                                 |                                 |                     |
 | HP-UX 11.31               | ● | ● | ● |                     |
 |**Linux x86-64**|||||
-|Red Hat Enterprise Linux 6.x<br/>Red Hat Enterprise Linux 7.8<br/>Red Hat Enterprise Linux 8.1|●|●|●||
-|CentOS 6.x<br/>CentOS 7.8<br/>CentOS 8.1|●|●|●||
-|Oracle Linux 6.5<br/>Oracle Linux 6.6<br/>Oracle Linux 7.1<br/>Oracle Linux 7.2<br/>Oracle Linux 7.4|●|●|●||
+|Red Hat Enterprise Linux 6<br/>Red Hat Enterprise Linux 7<br/>Red Hat Enterprise Linux 8|●|●|●|*- glibc 2.12 이상*|
 |**Linux on Power**|||||
-|POWER7 Red Hat Enterprise Linux 6.5<br/>POWER7 Red Hat Enterprise Linux 7.1|●|-|●||
-|POWER8 Red Hat Enterprise Linux 6.5<br/>POWER8 Red Hat Enterprise Linux 7.1|●|-|●||
-
-
-# Altibase 7.1
-
-
-
-
-|                                                              | Altibase 서버<br /> | Altibase 클라이언트<br /> | 소프트웨어 요구사항                                          |
-| ------------------------------------------------------------ | :-----------------: | :-----------------------: | :----------------------------------------------------------- |
-| **AIX**                                                      |                     |                           |                                                              |
-| AIX 6.1 TL3 이상<br />AIX 7.1<br />AIX 7.2                   |          ●          |             ●             |                                                              |
-| **HP-UX Itanium (IA-64)**                                    |                     |                           |                                                              |
-| HP-UX 11.31 이상                                             |          ●          |             ●             |                                                              |
-| **Linux x86-64**                                             |                     |                           |                                                              |
-| Red Hat Enterprise Linux 6.0 이상<br/>Red Hat Enterprise Linux 7.0 이상<br/>Red Hat Enterprise Linux 8.0 이상 |          ●          |             ●             | - GNU glibc 2.12 이상                                        |
-| **Linux on Power**                                           |                     |                           |                                                              |
-| POWER7 Red Hat Enterprise Linux 6.5 이상<br/>POWER7 Red Hat Enterprise Linux 7.0 이상<br />POWER8 Red Hat Enterprise Linux 6.5 이상<br/>POWER8 Red Hat Enterprise Linux 7.0 이상 |          ●          |             ●             | - GNU glibc 2.12 이상                                        |
-| **Linux on Power** **(Little Endian)**                       |                     |                           |                                                              |
-| POWER8(LE) Red Hat Enterprise Linux 7.2 이상                 |          ●          |             ●             | - GNU glibc 2.17 이상<br />- Altibase 7.1.0.0.8 이상<br />- altimon : Altibase 7.1.0.3.6 이상 지원<br />- jdbcAdapter : Altibase 7.1.0.3.6 이상 지원<br /> |
-| **Microsoft Windows (x64)**                                  |                     |                           |                                                              |
-| Microsoft Windows 2008                                       |        **X**        |             ●             | - Altibase 클라이언트 7.1.0.4.5 이상                         |
+|POWER7 Red Hat Enterprise Linux 6<br/>POWER7 Red Hat Enterprise Linux 7|●|-|●||
+|POWER8 Red Hat Enterprise Linux 6<br/>POWER8 Red Hat Enterprise Linux 7|●|-|●||
+|**Linux on Power (Little Endian)**|||●||
+|POWER8(LE) Red Hat Enterprise Linux 7|●|-||*\- Altibase 6.5.1.4.5 이상*<br />*- glibc 2.17 이상*|
+|POWER9(LE) Red Hat Enterprise Linux 7|●|-|●|*\- Altibase 6.5.1.7.1 이상*<br />*- glibc 2.17 이상*|
+|**Oracle Solaris (Sparc)**|||||
+|Solaris 10|●|●|●||
+|Solaris 11|●|●|●|*- Altibase* *6.5.1.4.2 이상 지원*|
+|**Microsoft Windows (x64)**|||||
+|Microsoft Windows Server 2008<br/>Microsoft Windows Server 2012<br/>Microsoft Windows Server 2016<br/>Microsoft Windows Server 2019|●|●|●|*- Altibase 서버 6.5.1.7.7 이상 권장*|
+|Microsoft Windows 7<br/>Microsoft Windows 8|●|●|●||
+|Microsoft Windows 10|●|●|●|*- Altibase 클라이언트 6.5.1.6.2 이상*|
 
 
 
+### Altibase 6.5.1 Java 호환성
+
+#### Oracle JDK / IBM Java
+
+|                 | JDK 4 | JDK 5 |
+| :-------------- | :---: | :---: |
+| **JDBC Driver** |   ●   |   ●   |
+| **DB Link**     |   ●   |   ●   |
+
+#### OpenJDK
+
+> *Altibase 6.5.1.6.6 이상에서 호환성 보장*
+
+|                 | JDK 11 | JDK 12 |
+| :-------------- | :----: | :----: |
+| **JDBC Driver** |   ●    |   ●    |
+| **DB Link**     |   ●    |   ●    |
 
