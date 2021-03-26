@@ -1,3 +1,21 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Altibase 버전 별 지원 플랫폼](#altibase-%EB%B2%84%EC%A0%84-%EB%B3%84-%EC%A7%80%EC%9B%90-%ED%94%8C%EB%9E%AB%ED%8F%BC)
+  - [Altibase 7.1](#altibase-71)
+    - [지원 플랫폼](#%EC%A7%80%EC%9B%90-%ED%94%8C%EB%9E%AB%ED%8F%BC)
+    - [Altibase 7.1 Java 호환성](#altibase-71-java-%ED%98%B8%ED%99%98%EC%84%B1)
+      - [Oracle JDK / IBM Java](#oracle-jdk--ibm-java)
+      - [OpenJDK](#openjdk)
+  - [Altibase 6.5.1](#altibase-651)
+    - [지원 플랫폼](#%EC%A7%80%EC%9B%90-%ED%94%8C%EB%9E%AB%ED%8F%BC-1)
+    - [Altibase 6.5.1 Java 호환성](#altibase-651-java-%ED%98%B8%ED%99%98%EC%84%B1)
+      - [Oracle JDK / IBM Java](#oracle-jdk--ibm-java-1)
+      - [OpenJDK](#openjdk-1)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 **Table of Contents**  
 
 - [Altibase 버전 별 지원 플랫폼](#altibase-%EB%B2%84%EC%A0%84-%EB%B3%84-%EC%A7%80%EC%9B%90-%ED%94%8C%EB%9E%AB%ED%8F%BC)
@@ -53,6 +71,8 @@ Altibase 7.1 지원 플랫폼은 [Altibase 7.1 Installation 매뉴얼](https://g
 
 
 ## Altibase 6.5.1
+
+### 지원 플랫폼
 
 > Altibase 서버는 64비트만 지원합니다.
 
