@@ -35,7 +35,7 @@
 | **Linux x86-64**                                             |                     |                           |                                                              |
 | Red Hat Enterprise Linux 6<br/>Red Hat Enterprise Linux 7<br/>Red Hat Enterprise Linux 8 |          ●          |             ●             | - GNU glibc 2.12 이상                                        |
 | **Linux on Power**                                           |                     |                           |                                                              |
-| POWER7 Red Hat Enterprise Linux 6<br/>POWER7 Red Hat Enterprise Linux 7<br />POWER8 Red Hat Enterprise Linux 6<br/>POWER8 Red Hat Enterprise Linux 7 |          ●          |             ●             | - GNU glibc 2.12 이상                                        |
+| POWER7 Red Hat Enterprise Linux 6<br/>POWER7 Red Hat Enterprise Linux 7<br /><br />POWER8 Red Hat Enterprise Linux 6<br/>POWER8 Red Hat Enterprise Linux 7 |          ●          |             ●             | - GNU glibc 2.12 이상                                        |
 | **Linux on Power** **(Little Endian)**                       |                     |                           |                                                              |
 | POWER8(LE) Red Hat Enterprise Linux 7                        |          ●          |             ●             | - GNU glibc 2.17 이상<br />- Altibase 7.1.0.0.8 이상<br />- altiMon : Altibase 7.1.0.3.6 이상 <br />- Adapter for JDBC : Altibase 7.1.0.3.6 이상<br /> |
 | **Microsoft Windows (x64)**                                  |                     |                           |                                                              |
