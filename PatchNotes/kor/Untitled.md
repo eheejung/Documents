@@ -49,7 +49,7 @@ Altibase 7.1 지원 플랫폼은 [Altibase 7.1 Installation 매뉴얼](https://g
 | ------------------------------------------------------------ | :-----------------: | :-----------------------: | :----------------------------------------------------------- |
 | **AIX on IBM Power Systems**                                 |                     |                           |                                                              |
 | AIX 6.1 TL3 <br />AIX 6.1 TL9<br />                          |          ●          |             ●             |                                                              |
-| AIX 7.1<br />AIX 7.2<sup>[1](#footnote_1)</sup>              |          ●          |             ●             | *- altiMon : Altibase 7.1.0.1.9 이상*<br />                  |
+| AIX 7.1<br />AIX 7.2<sup>[권고 버전](#footnote_1)</sup>      |          ●          |             ●             | *- altiMon : Altibase 7.1.0.1.9 이상*<br />                  |
 | **HP-UX Itanium (IA-64)**                                    |                     |                           |                                                              |
 | HP-UX 11.31                                                  |          ●          |             ●             |                                                              |
 | **Linux x86-64**                                             |                     |                           |                                                              |
@@ -57,16 +57,14 @@ Altibase 7.1 지원 플랫폼은 [Altibase 7.1 Installation 매뉴얼](https://g
 | **Linux on Power**                                           |                     |                           |                                                              |
 | POWER7 Red Hat Enterprise Linux 6<br/>POWER7 Red Hat Enterprise Linux 7<br />POWER8 Red Hat Enterprise Linux 6<br/>POWER8 Red Hat Enterprise Linux 7 |          ●          |             ●             | *- GNU glibc 2.12 이상*                                      |
 | **Linux on Power** **(Little Endian)**                       |                     |                           |                                                              |
-| POWER8(LE) Red Hat Enterprise Linux 7<sup>[2](#footnote_2)</sup> |          ●          |             ●             | *- GNU glibc 2.17 이상<br />- Altibase 7.1.0.0.8 이상<br />- altiMon : Altibase 7.1.0.3.6 이상 <br />- Adapter for JDBC : Altibase 7.1.0.3.6 이상*<br /> |
+| POWER8(LE) Red Hat Enterprise Linux 7<sup>[권고 버전](#footnote_2)</sup> |          ●          |             ●             | *- GNU glibc 2.17 이상<br />- Altibase 7.1.0.0.8 이상<br />- altiMon : Altibase 7.1.0.3.6 이상 <br />- Adapter for JDBC : Altibase 7.1.0.3.6 이상*<br /> |
 | **Microsoft Windows (x64)**                                  |                     |                           |                                                              |
 | Microsoft Windows 2008<sup>[3](#footnote_3)</sup>            |        **X**        |             ●             |                                                              |
 
-[^AIX 7.2]: *AIX 7.2의 경우 BUG-48201이 반영된 Altibase 7.1.0.4.7 이상 권장한다. BUG-48201은 AIX 7.2 에서 발견된 버그로 비정상 종료가 발생해야하는 상황에서 무한 대기가 발생하는 현상을 조치하였다.*
-[^Linux on Power (Little Endian)]: *Altibase 서버/클라이언트 7.1.0.0.8 에서 호환성 테스트되었다.*
-[^Microsoft Windows 2008]: *Altibase 클라이언트 7.1.0.4.5 에서 호환성 테스트되었다.*
-<a name="footnote_1">[1]</a> *AIX 7.2의 경우 BUG-48201이 반영된 Altibase 7.1.0.4.7 이상 권장한다. BUG-48201은 AIX 7.2 에서 발견된 버그로 비정상 종료가 발생해야하는 상황에서 무한 대기가 발생하는 현상을 조치하였다.*
+[^]: 
+<a name="footnote_1">[AIX 7.2]</a> *AIX 7.2의 경우 BUG-48201이 반영된 Altibase 7.1.0.4.7 이상 권장한다. BUG-48201은 AIX 7.2 에서 발견된 버그로 비정상 종료가 발생해야하는 상황에서 무한 대기가 발생하는 현상을 조치하였다.*
 
-<a name="footnote_2">[2]</a> *Altibase 서버/클라이언트 7.1.0.0.8 에서 호환성 테스트되었다.*
+<a name="footnote_2">[Linux on Power (Little Endian)]</a> *Altibase 서버/클라이언트 7.1.0.0.8 에서 호환성 테스트되었다.*
 
 <a name="footnote_3">[3]</a> *Altibase 클라이언트 7.1.0.4.5 에서 호환성 테스트되었다.*
 
