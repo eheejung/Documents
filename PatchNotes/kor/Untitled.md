@@ -61,11 +61,12 @@ Altibase 7.1 지원 플랫폼은 [Altibase 7.1 Installation 매뉴얼](https://g
 | **Microsoft Windows (x64)**                                  |                     |                           |                                                              |
 | Microsoft Windows 2008<sup>[권고 버전](#footnote_3)</sup>    |        **X**        |             ●             |                                                              |
 
-> ​	<a name="footnote_1">[AIX 7.2]</a> *AIX 7.2의 경우 BUG-48201이 반영된 Altibase 7.1.0.4.7 이상 권장한다. BUG-48201은 AIX 7.2 에서 발견된 버그로 비정상 종료가 발생해야하는 상황에서 무한 대기가 발생하는 현상을 조치하였다.*
+> <a name="footnote_1">[AIX 7.2]</a> *AIX 7.2의 경우 BUG-48201이 반영된 Altibase 7.1.0.4.7 이상 권장한다. BUG-48201은 AIX 7.2 에서 발견된 버그로 비정상 종료가 발생해야하는 상황에서 무한 대기가 발생하는 현상을 조치하였다.*
+>
+> <a name="footnote_2">[Linux on Power (Little Endian)]</a> *Altibase 서버/클라이언트 7.1.0.0.8 에서 호환성 테스트되었다.*
+>
+> <a name="footnote_3">[Microsoft Windows 2008]</a> *Altibase 클라이언트 7.1.0.4.5 에서 호환성 테스트되었다.*
 
-> ​	<a name="footnote_2">[Linux on Power (Little Endian)]</a> *Altibase 서버/클라이언트 7.1.0.0.8 에서 호환성 테스트되었다.*
-
-> <a name="footnote_3">	[Microsoft Windows 2008]</a> *Altibase 클라이언트 7.1.0.4.5 에서 호환성 테스트되었다.*
 
 
 ### Altibase 7.1 Java 호환성
