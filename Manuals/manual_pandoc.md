@@ -1,4 +1,5 @@
-\--FATAL\-- 
+###FATAL
+
 **0x00012 ( 18) idERR_FATAL_idc_SHM_ATTACH Unable to attach shared memory**<br>**Cause:** Failed to invoke the shmat() function. \# *Action: Verify that you have permission to access shared memory. Check the error number from the trace log and contact Altibase's Support Center (http://support.altibase.com).  
 **0x00013 ( 19) idERR_FATAL_idc_SHM_CTL Unable to delete shared memory**<br>**Cause:** Failed to invoke the shmctl() function. \# *Action: Verify that you have permission to access shared memory. Check the error number from the trace log and contact Altibase's Support Center (http://support.altibase.com).  
 **0x00014 ( 20) idERR_FATAL_idc_SEM_CTL Unable to delete a semaphore**<br>**Cause:** Failed to invoke the semctl() function. \# *Action: Verify that you have permission to access the semaphore. Check the error number from the trace log and contact Altibase's Support Center (http://support.altibase.com).  
