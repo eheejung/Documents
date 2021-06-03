@@ -40,7 +40,7 @@ Fixed Bugs
 
     보다 자세한 설명은 JDBC User’s Manual 을 참고하세요.
 
-    [JDBC User’s Manual - 1.JDBC 시작하기 - JDBC 드라이버 설치](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase\_7.1/kor/JDBC.md\#jdbc-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EC%84%A4%EC%B9%98)
+    [JDBC User’s Manual - 1.JDBC 시작하기 - JDBC 드라이버 설치](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/JDBC.md#jdbc-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EC%84%A4%EC%B9%98)
 
     
 
