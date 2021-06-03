@@ -431,8 +431,6 @@ Fixed Bugs
 
     - [Adapter for JDBC User’s Manual - 3.사용법 - 오프라인 옵션(Offline Option)](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/JdbcAdapter.md#%EC%98%A4%ED%94%84%EB%9D%BC%EC%9D%B8-%EC%98%B5%EC%85%98offline-option)
 
-     
-
 -   **재현 방법**
 
     -   **재현 절차**
@@ -455,9 +453,9 @@ Changes
 
 ### Version Info
 
-  altibase version   database binary version   meta version   cm protocol version   replication protocol version   sharding version
------------------- ------------------------- -------------- --------------------- ------------------------------ ------------------
-  7.1.0.1.8          6.5.1                     8.7.1          7.1.6                 7.4.4                          2.1.0
+| altibase version | database binary version | meta version | cm protocol version | replication protocol version |
+| :--------------: | :---------------------: | :----------: | :-----------------: | :--------------------------: |
+|    7.1.0.5.6     |          6.5.1          |    8.9.1     |        7.1.7        |            7.4.6             |
 
 > Altibase 7.1 패치 버전별 히스토리는
 > [Version\_Histories](https://github.com/ALTIBASE/Documents/blob/master/PatchNotes/Altibase_7_1_Version_Histories.md)
@@ -487,14 +485,7 @@ Changes
 
 #### Replication protocol Version
 
-Replication 프로토콜 버전은 변경되지 않았다..
-
-#### Sharding Version
-
-샤딩 버전은 변경 되지 않았다.
-
-> 알티베이스 샤딩 프로토콜 및 메타는 상위, 하위 호환성을 보장하지
-> 않는다. 즉, 샤딩 버전이 다른 경우, 재구성해야 한다.
+Replication 프로토콜 버전은 변경되지 않았다.
 
 ### 프로퍼티
 
