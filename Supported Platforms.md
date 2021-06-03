@@ -20,7 +20,7 @@
 
 ### 지원 플랫폼
 
->  *Altibase 서버/클라이언트 모두 64-bit 만 지원합니다.*<br>*Microsoft Windows 는 Altibase 클라이언트만 지원합니다.*<br><br>
+>  *Altibase 서버/클라이언트 모두 64-bit 만 지원합니다.*<br>*Microsoft Windows 는 Altibase 클라이언트만 지원합니다.*
 >
 >  *Altibase 7.1 패치 버전을 명시하지 않은 경우 Altibase 7.1 모든 버전에서 지원함을 의미합니다.*
 
