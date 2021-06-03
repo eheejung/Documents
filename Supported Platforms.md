@@ -18,8 +18,6 @@
 
 ## Altibase 7.1
 
-### 지원 플랫폼
-
 >  *Altibase 서버/클라이언트 모두 64-bit 만 지원합니다.*<br>*Microsoft Windows 는 Altibase 클라이언트만 지원합니다.*
 >
 >  *Altibase 7.1 패치 버전을 명시하지 않은 경우 Altibase 7.1 모든 버전에서 지원함을 의미합니다.*
@@ -45,8 +43,6 @@
 
 ## Altibase 6.5.1
 
-### 지원 플랫폼
-
 > *Altibase 서버는 64비트만 지원합니다.*
 >
 > *Altibase 6.5.1 패치 버전을 명시하지 않은 경우 Altibase 6.5.1 모든 버전에서 지원함을 의미합니다.*
@@ -64,8 +60,8 @@
 |POWER7 Red Hat Enterprise Linux 6.5<br/>POWER7 Red Hat Enterprise Linux 7.1|●|-|●|*- glibc 2.12 이상*|
 |POWER8 Red Hat Enterprise Linux 6.5<br/>POWER8 Red Hat Enterprise Linux 7.1|●|-|●|*- glibc 2.12 이상*|
 |**Linux on Power (Little Endian)**|||●||
-|POWER8(LE) Red Hat Enterprise Linux 7.2|●|-|●|*- glibc 2.17 이상*|
-|POWER9(LE) Red Hat Enterprise Linux 7.6|●|-|●|*- glibc 2.17 이상*|
+|POWER8(LE) Red Hat Enterprise Linux 7.2|●|-|●|*- glibc 2.17 이상*<br />*- Altibase 6.5.1.4.5 이상*|
+|POWER9(LE) Red Hat Enterprise Linux 7.6|●|-|●|*- glibc 2.17 이상*<br />*- Altibase 6.5.1.7.1 이상*|
 |**Oracle Solaris (Sparc)**|||||
 |Solaris 10|●|●|●||
 |Solaris 11|●|●|●|*- Altibase 6.5.1.4.2 이상*|
