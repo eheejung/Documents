@@ -232,7 +232,7 @@ New Features
 
 -   **재현 빈도** : Always
 
--   **설명** : APRE C/C++ Precompiler와 aexport에 오프라인 이중화 메타 복제(Offline Option) 관련 구문을 추가합니다. 이 버그를 반영하려면 apre 와 aeport 를 패치하고 apre 응용 프로그램을 재컴파일 해야 합니다. 
+-   **설명** : APRE C/C++ Precompiler와 aexport에 오프라인 이중화 메타 복제(Offline Option) 관련 구문을 추가합니다. 이 버그를 반영하려면 apre 와 aexport 를 패치하고 apre 응용 프로그램을 재컴파일 해야 합니다. 
     
     CREATE REPLICATION ala_replication_name FOR ANALYSIS OPTIONS **META_LOGGING**
     
@@ -295,19 +295,21 @@ New Features
       원격 서버의 이중화 관련 메타 테이블 정보를 확인할 수 있는 성능 뷰 6가지가 추가되었습니다.
 
       - [V$REPL_REMOTE_META_REPLICATIONS](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/GeneralReference_4.md#vrepl_remote_meta_replications)
+        
         원격 서버의 이중화 관련 정보를 기록하고 있는 SYS_REPLICATIONS_ 메타 테이블의 정보를 보여준다.
         
-      - [V$REPL_REMOTE_META_ITEMS](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/GeneralReference_4.md#vrepl_remote_meta_items)
-
-        원격 서버의 이중화 대상 테이블에 관련된 정보를 가진 SYS_REPL_ITEMS_ 메타 테이블 정보를 보여준다.
-
-      - [V$REPL_REMOTE_META_COLUMNS](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/GeneralReference_4.md#vrepl_remote_meta_columns)
-
-        원격 서버의 이중화 송신 쓰레드가 현재 복제중인 이중화 대상 칼럼의 정보를 가진 SYS_REPL_OLD_COLUMNS_ 메타 테이블 정보를 보여 준다.
-
+  - [V$REPL_REMOTE_META_ITEMS](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/GeneralReference_4.md#vrepl_remote_meta_items)
+    
+    원격 서버의 이중화 대상 테이블에 관련된 정보를 가진 SYS_REPL_ITEMS_ 메타 테이블 정보를 보여준다.
+    
+  - [V$REPL_REMOTE_META_COLUMNS](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/GeneralReference_4.md#vrepl_remote_meta_columns)
+    
+    원격 서버의 이중화 송신 쓰레드가 현재 복제중인 이중화 대상 칼럼의 정보를 가진 SYS_REPL_OLD_COLUMNS_ 메타 테이블 정보를 보여 준다.
+    
       - [V$REPL_REMOTE_META_INDEX_COLUMNS](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/GeneralReference_4.md#vrepl_remote_meta_index_columns)
-        원격 서버의 이중화 송신 쓰레드가 현재 사용 중인 이중화 대상 인덱스 칼럼의 정보를 가진 SYS_REPL_OLD_INDEX_COLUMNS_ 메타 테이블 정보를 보여 준다.
-
+    
+      원격 서버의 이중화 송신 쓰레드가 현재 사용 중인 이중화 대상 인덱스 칼럼의 정보를 가진 SYS_REPL_OLD_INDEX_COLUMNS_ 메타 테이블 정보를 보여 준다.
+    
       - [V$REPL_REMOTE_META_INDICES](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/GeneralReference_4.md#vrepl_remote_meta_indices)
 
         원격 서버의 이중화 송신 쓰레드가 현재 복제 중인 이중화 대상 인덱스의 정보를 가진 SYS_REPL_OLD_INDICES_ 메타 테이블의 정보를 보여 준다.
@@ -315,7 +317,7 @@ New Features
       - [V$REPL_REMOTE_META_CHECKS](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/GeneralReference_4.md#vrepl_remote_meta_checks)
 
         원격 서버의 이중화 송신 쓰레드가 현재 복제 중인 이중화 테이블의 제약 조건에 관한 정보를 보여 준다.
-
+    
     -   Property
         
     -   Compile Option
