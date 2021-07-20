@@ -874,8 +874,6 @@ SubHashPageCount      : 64
 HashSlotPageCount     : 128
     ```
 
-    
-    
 -   **재현 방법**
 
     -   **재현 절차**
