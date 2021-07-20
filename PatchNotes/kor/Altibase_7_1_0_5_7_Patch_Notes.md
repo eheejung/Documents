@@ -549,7 +549,7 @@ Fixed Bugs
                1 : 별도의 트랜잭션으로 관리한다. 사용자 트랜잭션에 영향을 주지 않는다.
                
            - 기본값 : 0
-            
+           
            - 속성 : 읽기 전용, 비공개
 
      - Compile Option
@@ -922,9 +922,9 @@ Fixed Bugs
 
     ```bash
     smpFixedPageList::setFreeSlot
-CreateSCN    : ...
+    CreateSCN    : ...
     LimitSCN      : ...
-NextOIDIsNULL : ...
+    NextOIDIsNULL : ...
     ```
 
 -   **재현 방법**
