@@ -232,7 +232,7 @@ New Features
 
 -   **재현 빈도** : Always
 
--   **설명** : APRE C/C++ Precompiler와 aexport에 오프라인 이중화 메타 복제(Offline Option) 관련 구문을 추가합니다.
+-   **설명** : APRE C/C++ Precompiler와 aexport에 오프라인 이중화 메타 복제(Offline Option) 관련 구문을 추가합니다. 이 버그를 반영하려면 apre 와 aeport 를 패치하고 apre 응용 프로그램을 재컴파일 해야 합니다. 
     
     CREATE REPLICATION ala_replication_name FOR ANALYSIS OPTIONS **META_LOGGING**
     
@@ -312,9 +312,9 @@ New Features
 
         원격 서버의 이중화 송신 쓰레드가 현재 복제 중인 이중화 대상 인덱스의 정보를 가진 SYS_REPL_OLD_INDICES_ 메타 테이블의 정보를 보여 준다.
 
-        - [V$REPL_REMOTE_META_CHECKS](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/GeneralReference_4.md#vrepl_remote_meta_checks)
+      - [V$REPL_REMOTE_META_CHECKS](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/kor/GeneralReference_4.md#vrepl_remote_meta_checks)
 
-          원격 서버의 이중화 송신 쓰레드가 현재 복제 중인 이중화 테이블의 제약 조건에 관한 정보를 보여 준다.
+        원격 서버의 이중화 송신 쓰레드가 현재 복제 중인 이중화 테이블의 제약 조건에 관한 정보를 보여 준다.
 
     -   Property
         
@@ -402,8 +402,9 @@ Fixed Bugs
 
   - **수행 결과**
 
-    ```bash
-    ERR-31455 : Failed to work because an internal exception occurred from an OS.[Contact Altibase's Support Center] 에러가 발생하거나 Altibase 서버 비정상 종료
+    ```
+    ERR-31455 : Failed to work because an internal exception occurred from an OS.[Contact Altibase's Support Center] 에러가 발생하거나
+    Altibase 서버 비정상 종료
     ```
 
   -   **예상 결과**
@@ -517,8 +518,10 @@ Fixed Bugs
 
 -   **설명** : 시퀀스 객체 생성/변경에서 CACHE 절을 사용한 경우 시퀀스 사용 시 내부적으로 UPDATE 문을 수행합니다. 이로 인해 사용자가 수행한 조회 트랜잭션이 변경 트랜잭션으로 변경되어 UTRANS_TIMEOUT 에 걸려 세션이 종료하는 현상입니다. 이 현상을 개선하기 위해 \__SEQ_CACHE_UPT_TX_ENABLE 프로퍼티를 추가합니다. 
     
-    \__SEQ_CACHE_UPT_TX_ENABLE = 0 은 기존과 같이 사용자의 조회 트랜잭션이 변경 트랜잭션으로 바뀌고 __SEQ_CACHE_UPT_TX_ENABLE = 1 은 별도 트랜잭션으로 관리하여 사용자 트랜잭션에 영향을 주지 않습니다. 
+    \__SEQ_CACHE_UPT_TX_ENABLE = 0 은 기존과 같이 사용자의 조회 트랜잭션이 변경 트랜잭션으로 바뀌고
 
+    __SEQ_CACHE_UPT_TX_ENABLE = 1 은 별도 트랜잭션으로 관리하여 사용자 트랜잭션에 영향을 주지 않습니다. 
+    
 -   **재현 방법**
 
     -   **재현 절차**
@@ -542,10 +545,10 @@ Fixed Bugs
                0 : 별도의 트랜잭션으로 관리하지 않는다. 사용자 트랜잭션에 영향을 준다.
 
                1 : 별도의 트랜잭션으로 관리한다. 사용자 트랜잭션에 영향을 주지 않는다.
-           
-       - 기본값 : 0
-
-       - 속성 : 읽기 전용, 비공개
+               
+           - 기본값 : 0
+    
+           - 속성 : 읽기 전용, 비공개
 
      - Compile Option
      - Error Code
@@ -758,8 +761,9 @@ Fixed Bugs
 
   -   **예상 결과**
 
-      ```sql
       _PROWID 예약어를 사용할 수 없는 문장이므로 에러 메시지를 출력해야 합니다. 
+      
+      ```sql
       ERR-31385 : _PROWID is not supported.
       ```
 
@@ -839,7 +843,7 @@ Fixed Bugs
 
 -   **설명** : DISK TEMP TABLE에서 HASH 연산 시 특정 상황에서 Altibase 서버가 비정상 종료하는 현상을 회피하고 원인 분석을 위한 로그를 추가합니다. 이 버그 현상 발생 시 altibase_dump.log 에 아래와 같은 로그가 남게 됩니다.
     
-    ```bash
+    ```
 DUMP HASH WASEGMENT:
     WASegPtr              : 0x7fb19e2031d8
     SpaceID               : 4
@@ -868,6 +872,8 @@ SubHashPageCount      : 64
 HashSlotPageCount     : 128
     ```
 
+    
+    
 -   **재현 방법**
 
     -   **재현 절차**
@@ -921,14 +927,14 @@ CreateSCN    : ...
 NextOIDIsNULL : ...
     ```
 
-    **재현 방법**
+-   **재현 방법**
 
     -   **재현 절차**
 
     -   **수행 결과**
-    
+
     -   **예상 결과**
-    
+
 -   **Workaround**
 
 -   **변경사항**
