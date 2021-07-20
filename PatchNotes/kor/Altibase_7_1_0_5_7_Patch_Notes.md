@@ -110,12 +110,12 @@ New Features
 -   **설명** : deferred prepare 사용 시 불필요한 통신 프로토콜을 최적화하여 성능을 개선하였습니다. 이 버그를 반하려면 Altibase JDBC Driver 패치 및 응용 프로그램 재컴파일 해야 합니다. 
     
 -   **재현 방법**
--   **재현 절차**
-    
--   **수행 결과**
-    
--   **예상 결과**
-    
+    -   **재현 절차**
+        
+    -   **수행 결과**
+        
+    -   **예상 결과**
+
 -   **Workaround**
 
 -   **변경사항**
@@ -338,12 +338,12 @@ Fixed Bugs
 -   **설명** : DISCARD 상태의 테이블스페이스로 인해 Restart Recovery 수행 중 언두 단계에서 Altibase 서버 구동이 실패하는 현상을 수정합니다.
     
 -   **재현 방법**
--   **재현 절차**
-    
--   **수행 결과**
-    
--   **예상 결과**
-    
+    -   **재현 절차**
+        
+    -   **수행 결과**
+        
+    -   **예상 결과**
+
 -   **Workaround**
 
 -   **변경사항**
@@ -549,7 +549,7 @@ Fixed Bugs
                1 : 별도의 트랜잭션으로 관리한다. 사용자 트랜잭션에 영향을 주지 않는다.
                
            - 기본값 : 0
-    
+          
            - 속성 : 읽기 전용, 비공개
 
      - Compile Option
@@ -845,7 +845,7 @@ Fixed Bugs
 
 -   **설명** : DISK TEMP TABLE에서 HASH 연산 시 특정 상황에서 Altibase 서버가 비정상 종료하는 현상을 회피하고 원인 분석을 위한 로그를 추가합니다. 이 버그 현상 발생 시 altibase_dump.log 에 아래와 같은 로그가 남게 됩니다.
     
-    ```
+    ```bash
 DUMP HASH WASEGMENT:
     WASegPtr              : 0x7fb19e2031d8
     SpaceID               : 4
@@ -890,7 +890,7 @@ HashSlotPageCount     : 128
 
     -   Performance view
     -   Property
-        -   \__TEMPDUMP_ENABLE 프로퍼티 삭제
+        -   __TEMPDUMP_ENABLE 프로퍼티 삭제
 
         -   __TEMPDUMP_LEVEL 프로퍼티 추가
 
