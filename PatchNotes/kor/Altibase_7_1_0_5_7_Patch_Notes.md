@@ -549,7 +549,7 @@ Fixed Bugs
                1 : 별도의 트랜잭션으로 관리한다. 사용자 트랜잭션에 영향을 주지 않는다.
                
            - 기본값 : 0
-          
+            
            - 속성 : 읽기 전용, 비공개
 
      - Compile Option
@@ -845,60 +845,35 @@ Fixed Bugs
 
 -   **설명** : DISK TEMP TABLE에서 HASH 연산 시 특정 상황에서 Altibase 서버가 비정상 종료하는 현상을 회피하고 원인 분석을 위한 로그를 추가합니다. 이 버그 현상 발생 시 altibase_dump.log 에 아래와 같은 로그가 남게 됩니다.
     
-    > DUMP HASH WASEGMENT:
-> WASegPtr              : 0x7fb19e2031d8
-    > SpaceID               : 4
-    > Type                  : 1 HASH
-> HashSlotCount         : 65536
-    > InMemory              : OutMemory
-> Unique                : 0
-    > OpenCursorType        : 0
-> EndWPID               : 384
-    > InsertGroup BeginWPID : 128
-> InsertGroup EndWPID   : 320
-    > InsertGroup ReuseWPID : 131
-> FetchGroup BeginWPID  : 384
-    > FetchGroup EndWPID    : 384
-> FetchGroup ReuseWPID  : 384
-    > SubHashGroup BeginWPID : 320
-> SubHashGroup EndWPID   : 384
-    > SubHashGroup ReuseWPID : 352
-> WAExtentListCount     : 8
-    > MaxWAExtentCount      : 6
-> AllocWAPageCount      : 384
-    > NPageHashBucketCnt    : 384
-> NPageCount            : 386
-    > SubHashPageCount      : 64
-> SubHashBuildCount     : 3
-    > HashSlotPageCount     : 128
+    
 
     ```bash
-DUMP HASH WASEGMENT:
+    DUMP HASH WASEGMENT:
     WASegPtr              : 0x7fb19e2031d8
     SpaceID               : 4
     Type                  : 1 HASH
     HashSlotCount         : 65536
     InMemory              : OutMemory
     Unique                : 0
-    OpenCursorType        : 0
+OpenCursorType        : 0
     EndWPID               : 384
-    InsertGroup BeginWPID : 128
+InsertGroup BeginWPID : 128
     InsertGroup EndWPID   : 320
-    InsertGroup ReuseWPID : 131
+InsertGroup ReuseWPID : 131
     FetchGroup BeginWPID  : 384
-    FetchGroup EndWPID    : 384
+FetchGroup EndWPID    : 384
     FetchGroup ReuseWPID  : 384
-    SubHashGroup BeginWPID : 320
+SubHashGroup BeginWPID : 320
     SubHashGroup EndWPID   : 384
-    SubHashGroup ReuseWPID : 352
+SubHashGroup ReuseWPID : 352
     WAExtentListCount     : 8
-    MaxWAExtentCount      : 6
+MaxWAExtentCount      : 6
     AllocWAPageCount      : 384
-    NPageHashBucketCnt    : 384
+NPageHashBucketCnt    : 384
     NPageCount            : 386
-    SubHashPageCount      : 64
+SubHashPageCount      : 64
     SubHashBuildCount     : 3
-    HashSlotPageCount     : 128
+HashSlotPageCount     : 128
     ```
     
 -   **재현 방법**
